@@ -11,47 +11,50 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:          #eaf0ed;
-      --bg-pattern:  url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231b5e45' fill-opacity='0.04'%3E%3Cpath d='M0 20h40M20 0v40' stroke='%231b5e45' stroke-width='0.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      --bg:          #f0f4f8;
+      --bg-pattern:  url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a3a5c' fill-opacity='0.04'%3E%3Cpath d='M0 20h40M20 0v40' stroke='%231a3a5c' stroke-width='0.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       --surface:     #ffffff;
-      --primary:     #1b5e45;
-      --primary-h:   #134430;
-      --accent:      #2a9d7c;
-      --accent-l:    #6fcfb5;
-      --light:       #d0ede5;
-      --text:        #0d2318;
-      --text-sub:    #4a7a68;
-      --border:      #b2d8cb;
-      --danger:      #c0392b;
+      --primary:     #1a3a5c;
+      --primary-h:   #122952;
+      --accent:      #0d9488;
+      --accent-l:    #5eead4;
+      --light:       #e0eaf4;
+      --text:        #0f1e2e;
+      --text-sub:    #4a6080;
+      --border:      #c4d4e4;
+      --danger:      #dc2626;
+      --warn:        #f59e0b;
       --shadow:      0 2px 14px rgba(0,0,0,.08);
+      --shadow-md:   0 4px 20px rgba(0,0,0,.11);
       --radius:      12px;
       --transition:  .22s cubic-bezier(.4,0,.2,1);
 
       /* ── Sidebar ── */
-      --sb-bg:       #071810;
+      --sb-bg:       #0a1628;
       --sb-w:        242px;
       --sb-wc:       64px;
-      --sb-text:     rgba(195,228,215,.8);
-      --sb-active:   rgba(42,157,124,.18);
-      --sb-active-b: #2a9d7c;
+      --sb-text:     rgba(180,210,240,.8);
+      --sb-active:   rgba(13,148,136,.18);
+      --sb-active-b: #0d9488;
       --sb-hover:    rgba(255,255,255,.06);
       --sb-section:  rgba(255,255,255,.08);
     }
 
     /* ── DARK MODE ── */
     [data-theme="dark"] {
-      --bg:        #0a1510;
-      --surface:   #122018;
-      --primary:   #2a9d7c;
-      --primary-h: #1f7a5e;
-      --accent:    #6fcfb5;
-      --accent-l:  #2a9d7c;
-      --light:     #1a3028;
-      --text:      #d0ede5;
-      --text-sub:  #6fcfb5;
-      --border:    #1e3d2e;
+      --bg:        #0c1524;
+      --surface:   #132035;
+      --primary:   #60a5fa;
+      --primary-h: #3b82f6;
+      --accent:    #2dd4bf;
+      --accent-l:  #0d9488;
+      --light:     #1a2d45;
+      --text:      #e2eaf4;
+      --text-sub:  #7ca4c8;
+      --border:    #1e3050;
       --shadow:    0 2px 16px rgba(0,0,0,.50);
-      --sb-bg:     #050e08;
+      --shadow-md: 0 4px 22px rgba(0,0,0,.30);
+      --sb-bg:     #070f1e;
     }
     [data-theme="dark"] .modal,
     [data-theme="dark"] .confirm-box { background: var(--surface); border: 1px solid var(--border); }
@@ -108,7 +111,7 @@
     }
     .sb-logo {
       width: 36px; height: 36px; flex-shrink: 0;
-      background: linear-gradient(135deg, #1b5e45, #2a9d7c);
+      background: linear-gradient(135deg, #1a3a5c, #0d9488);
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,.3);
@@ -179,7 +182,7 @@
       content: attr(data-tip);
       position: absolute; left: calc(var(--sb-wc) + 8px); top: 50%;
       transform: translateY(-50%);
-      background: #1b5e45; color: #fff;
+      background: #1a3a5c; color: #fff;
       padding: 5px 11px; border-radius: 7px; font-size: .78rem; font-weight: 600;
       white-space: nowrap; z-index: 9999; pointer-events: none;
       box-shadow: 0 4px 14px rgba(0,0,0,.3);
@@ -202,13 +205,13 @@
     .nav-sub-item {
       display: flex; align-items: center; gap: 8px;
       padding: 7px 14px 7px 40px;
-      font-size: .8rem; color: rgba(195,228,215,.6);
+      font-size: .8rem; color: rgba(180,210,240,.6);
       cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
       border-left: 3px solid transparent;
       transition: background var(--transition), color var(--transition);
     }
     .nav-sub-item:hover { background: rgba(255,255,255,.06); color: #fff; }
-    .nav-sub-item.active { color: var(--accent-l); border-left-color: var(--accent); background: rgba(42,157,124,.1); }
+    .nav-sub-item.active { color: var(--accent-l); border-left-color: var(--accent); background: rgba(13,148,136,.1); }
     #sidebar.collapsed .nav-sub { display: none; }
 
     /* Footer */
@@ -223,8 +226,8 @@
       height: 100vh; overflow: hidden; min-width: 0;
       background-color: var(--bg);
       background-image:
-        linear-gradient(rgba(27,94,69,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(27,94,69,.04) 1px, transparent 1px);
+        linear-gradient(rgba(26,58,92,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,58,92,.04) 1px, transparent 1px);
       background-size: 32px 32px;
     }
 
@@ -264,7 +267,7 @@
     }
     .edit-toggle:hover { background: var(--border); }
     .edit-toggle.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-    [data-theme="dark"] .topbar { background: #0f2018; border-bottom-color: var(--border); }
+    [data-theme="dark"] .topbar { background: #0f1e30; border-bottom-color: var(--border); }
     [data-theme="dark"] .back-btn { background: var(--light); color: var(--text); }
 
     /* ── MAIN SCROLL AREA ── */
@@ -297,17 +300,17 @@
     }
     .btn:active { transform: scale(.97); }
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #fff; box-shadow: 0 2px 10px rgba(27,94,69,.3);
+      background: var(--primary);
+      color: #fff; box-shadow: 0 2px 10px rgba(26,58,92,.25);
     }
-    .btn-primary:hover { background: linear-gradient(135deg, var(--primary-h), #1f7a5e); box-shadow: 0 4px 16px rgba(27,94,69,.4); }
+    .btn-primary:hover { background: var(--primary-h); box-shadow: 0 4px 16px rgba(26,58,92,.35); }
     .btn-outline {
       background: transparent; color: var(--primary);
       border: 1.5px solid var(--primary);
     }
     .btn-outline:hover { background: var(--light); }
     .btn-danger { background: var(--danger); color: #fff; }
-    .btn-danger:hover { background: #a93226; }
+    .btn-danger:hover { background: #b91c1c; }
     .btn-sm { padding: 5px 12px; font-size: .78rem; border-radius: 6px; }
     .btn-icon {
       background: transparent; border: none; cursor: pointer;
@@ -347,7 +350,7 @@
       min-height: 80px;
       display: flex; flex-direction: column; justify-content: space-between;
     }
-    .card:hover { box-shadow: 0 6px 24px rgba(45,106,79,.18); transform: translateY(-2px); border-color: var(--primary); }
+    .card:hover { box-shadow: 0 6px 24px rgba(26,58,92,.18); transform: translateY(-2px); border-color: var(--primary); }
     .card.edit-mode { cursor: default; }
     .card.edit-mode:hover { transform: none; box-shadow: var(--shadow); }
     .card-name {
@@ -418,7 +421,7 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 1.3rem; flex-shrink: 0;
     }
-    .icon-study  { background: #d8f3dc; }
+    .icon-study  { background: #dbeafe; }
     .icon-saq    { background: #c8e6f5; }
     .icon-viva   { background: #fde8d8; }
 
@@ -460,17 +463,17 @@
     .icon-docs { background:linear-gradient(135deg,#e8700a,#f4a640); color:#fff; }
 
     /* drag-and-drop onto doc shelf */
-    .doc-shelf.drag-over { border-color:var(--accent) !important; box-shadow:0 0 0 3px rgba(42,157,124,.18); }
+    .doc-shelf.drag-over { border-color:var(--accent) !important; box-shadow:0 0 0 3px rgba(13,148,136,.18); }
     .doc-shelf.drag-over .doc-shelf-body { display:block; }          /* auto-open on drag */
-    .doc-shelf.drag-over .doc-shelf-header { background:rgba(42,157,124,.07); }
+    .doc-shelf.drag-over .doc-shelf-header { background:rgba(13,148,136,.07); }
     .doc-drop-hint { display:none; align-items:center; justify-content:center; gap:10px; margin:12px 0 4px;
       border:2px dashed var(--accent); border-radius:10px; padding:18px 14px;
-      color:var(--accent); font-size:.88rem; font-weight:600; background:rgba(42,157,124,.05); pointer-events:none; }
+      color:var(--accent); font-size:.88rem; font-weight:600; background:rgba(13,148,136,.05); pointer-events:none; }
     .doc-shelf.drag-over .doc-drop-hint { display:flex; }
     .doc-shelf.drag-over .doc-list        { opacity:.35; pointer-events:none; }
     /* ── Curriculum Requirements card ── */
     .curriculum-card { background:var(--surface); border:1.5px solid var(--border); border-radius:var(--radius); overflow:hidden; margin-bottom:16px; }
-    .curriculum-card-header { display:flex; align-items:center; justify-content:space-between; padding:14px 20px; background:linear-gradient(135deg,#1b5e45,#2a9d7c); color:#fff; }
+    .curriculum-card-header { display:flex; align-items:center; justify-content:space-between; padding:14px 20px; background:linear-gradient(135deg,#1a3a5c,#0d9488); color:#fff; }
     .curriculum-card-title { font-size:.95rem; font-weight:700; letter-spacing:.02em; }
     .curriculum-card-actions { display:flex; gap:8px; align-items:center; }
     .curriculum-card-body { padding:0; }
@@ -576,8 +579,19 @@
     .chagchag-btn:hover:not(:disabled) { background: var(--primary-h); }
     .pluto-btn { background: #3d348b; color: #fff; }
     .pluto-btn:hover:not(:disabled) { background: #2d2568; }
+    .pluto-mirror-btn { background: #1a5c8a; color: #fff; }
+    .pluto-mirror-btn:hover:not(:disabled) { background: #124468; }
+    .pluto-group { display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+    .pluto-group-label { font-size:.72rem; color:var(--text-muted,#888); font-weight:600; letter-spacing:.04em; white-space:nowrap; }
     .alnino-btn { background: #b5451b; color: #fff; }
     .alnino-btn:hover:not(:disabled) { background: #8c3314; }
+    .alnino-mcq-btn { background: #5b3fa0; color: #fff; }
+    .alnino-mcq-btn:hover:not(:disabled) { background: #3e2a72; }
+    .alnino-settings-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-bottom:6px; }
+    .alnino-q-setting { display:flex; align-items:center; gap:7px; }
+    .alnino-q-label { font-size:.75rem; font-weight:700; color:var(--text-muted,#777); white-space:nowrap; letter-spacing:.03em; }
+    .alnino-q-input { width:60px; padding:4px 8px; border:1px solid var(--border,#ccc); border-radius:7px; font-size:.88rem; font-weight:700; text-align:center; background:var(--card-bg,#fff); color:var(--text,#0f1e2e); outline:none; }
+    .alnino-q-input:focus { border-color:var(--accent,#0d9488); box-shadow:0 0 0 2px rgba(13,148,136,.15); }
     .alnino-open-btn { background: var(--primary); color: #fff; }
     .alnino-open-btn:hover:not(:disabled) { background: var(--primary-h); }
     .thufla-btn { background: #6a2c8e; color: #fff; }
@@ -693,36 +707,36 @@
 
     /* ── FIFI ANALYSIS ───────────────────────────── */
     .fifi-header { display:flex; align-items:flex-start; gap:16px; margin-bottom:28px; flex-wrap:wrap; }
-    .fifi-avatar { width:60px; height:60px; border-radius:16px; background:linear-gradient(135deg,#0d5c8a,#1a85c8); display:flex; align-items:center; justify-content:center; font-size:1.8rem; flex-shrink:0; box-shadow:0 4px 16px rgba(13,92,138,.3); }
-    .fifi-intro-text h2 { font-size:1.3rem; font-weight:800; color:#0d5c8a; margin-bottom:4px; }
+    .fifi-avatar { width:60px; height:60px; border-radius:16px; background:linear-gradient(135deg,#1a3a5c,#0d9488); display:flex; align-items:center; justify-content:center; font-size:1.8rem; flex-shrink:0; box-shadow:0 4px 16px rgba(26,58,92,.3); }
+    .fifi-intro-text h2 { font-size:1.3rem; font-weight:800; color:#1a3a5c; margin-bottom:4px; }
     .fifi-intro-text p { font-size:.88rem; color:var(--text-sub); line-height:1.5; }
-    [data-theme="dark"] .fifi-intro-text h2 { color:#5bb8f5; }
-    .fifi-btn { background:linear-gradient(135deg,#0d5c8a,#1a85c8); color:#fff; border:none; border-radius:10px; padding:12px 28px; font-size:.95rem; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:8px; transition:all .18s; box-shadow:0 3px 12px rgba(13,92,138,.3); }
-    .fifi-btn:hover:not(:disabled) { background:linear-gradient(135deg,#0a4a70,#1570a8); box-shadow:0 5px 18px rgba(13,92,138,.4); transform:translateY(-1px); }
+    [data-theme="dark"] .fifi-intro-text h2 { color:#60a5fa; }
+    .fifi-btn { background:linear-gradient(135deg,#1a3a5c,#0d9488); color:#fff; border:none; border-radius:10px; padding:12px 28px; font-size:.95rem; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:8px; transition:all .18s; box-shadow:0 3px 12px rgba(26,58,92,.3); }
+    .fifi-btn:hover:not(:disabled) { background:linear-gradient(135deg,#122952,#0b7a6e); box-shadow:0 5px 18px rgba(26,58,92,.4); transform:translateY(-1px); }
     .fifi-btn:disabled { opacity:.45; cursor:not-allowed; }
     .fifi-status { font-size:.84rem; color:var(--text-sub); display:flex; align-items:center; gap:8px; margin-top:8px; min-height:22px; }
     .fifi-stats-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:14px; margin-bottom:24px; }
     .fifi-stat-card { background:var(--surface); border:1.5px solid var(--border); border-radius:12px; padding:16px 18px; text-align:center; }
-    .fifi-stat-value { font-size:1.8rem; font-weight:800; color:#0d5c8a; }
-    [data-theme="dark"] .fifi-stat-value { color:#5bb8f5; }
+    .fifi-stat-value { font-size:1.8rem; font-weight:800; color:#1a3a5c; }
+    [data-theme="dark"] .fifi-stat-value { color:#60a5fa; }
     .fifi-stat-label { font-size:.75rem; color:var(--text-sub); margin-top:2px; font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
     .fifi-session-list { display:flex; flex-direction:column; gap:10px; margin-bottom:24px; max-height:280px; overflow-y:auto; }
     .fifi-session-item { background:var(--surface); border:1.5px solid var(--border); border-radius:10px; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:.84rem; }
     .fifi-session-topic { font-weight:700; color:var(--text); flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
     .fifi-session-meta { color:var(--text-sub); font-size:.78rem; white-space:nowrap; }
     .fifi-session-score { font-weight:700; font-size:.92rem; white-space:nowrap; padding:3px 10px; border-radius:50px; }
-    .fifi-score-good { background:#d0ede5; color:#1b5e45; }
+    .fifi-score-good { background:#e0eaf4; color:#1a3a5c; }
     .fifi-score-mid  { background:#fff3cd; color:#856404; }
     .fifi-score-low  { background:#fde8e8; color:#c0392b; }
     .fifi-advice { background:var(--surface); border:1.5px solid #a8d4f0; border-radius:14px; padding:22px 24px; }
-    .fifi-advice h3 { font-size:1.05rem; font-weight:800; color:#0d5c8a; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+    .fifi-advice h3 { font-size:1.05rem; font-weight:800; color:#1a3a5c; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
     [data-theme="dark"] .fifi-advice { border-color:#1a4060; }
-    [data-theme="dark"] .fifi-advice h3 { color:#5bb8f5; }
+    [data-theme="dark"] .fifi-advice h3 { color:#60a5fa; }
     .fifi-advice-body { font-size:.9rem; color:var(--text); line-height:1.75; }
     .fifi-advice-body ul { padding-left:1.4em; margin:.4em 0; }
     .fifi-advice-body li { margin-bottom:.3em; }
-    .fifi-advice-body strong { color:#0d5c8a; }
-    [data-theme="dark"] .fifi-advice-body strong { color:#5bb8f5; }
+    .fifi-advice-body strong { color:#1a3a5c; }
+    [data-theme="dark"] .fifi-advice-body strong { color:#60a5fa; }
     .fifi-no-data { text-align:center; padding:40px 20px; color:var(--text-sub); }
     .fifi-no-data .fifi-nd-icon { font-size:3rem; margin-bottom:12px; opacity:.5; }
 
@@ -743,20 +757,20 @@
     .progress-table .pt-sub-row:last-child td { border-bottom:none; }
     .pt-sub-name { color:var(--text); font-weight:500; }
     .pt-cell { text-align:center; min-width:90px; }
-    .pt-cell.pt-done { background:#d4f0e3; color:#155724; font-weight:700; font-size:.95rem; }
-    [data-theme="dark"] .pt-cell.pt-done { background:#0d3320; color:#6fcfb5; }
+    .pt-cell.pt-done { background:#dbeafe; color:#1e3a8a; font-weight:700; font-size:.95rem; }
+    [data-theme="dark"] .pt-cell.pt-done { background:#0d1e40; color:#5eead4; }
     .pt-cell.pt-empty { color:var(--border); font-size:.8rem; }
     .pt-legend { display:flex; gap:20px; margin-bottom:14px; font-size:.78rem; color:var(--text-sub); flex-wrap:wrap; align-items:center; }
     .pt-legend-dot { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:5px; vertical-align:middle; }
-    .pt-legend-done { background:#d4f0e3; border:1px solid #6fcfb5; }
-    [data-theme="dark"] .pt-legend-done { background:#0d3320; }
+    .pt-legend-done { background:#dbeafe; border:1px solid #5eead4; }
+    [data-theme="dark"] .pt-legend-done { background:#0d1e40; }
     .fifi-charts { margin-bottom:24px; }
     .fifi-charts-title { font-size:.8rem; font-weight:700; color:var(--text-sub); text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px; }
     .fifi-chart-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
     @media(max-width:720px){ .fifi-chart-row { grid-template-columns:1fr; } }
     .fifi-chart-card { background:var(--surface); border:1.5px solid var(--border); border-radius:12px; padding:16px 18px; }
     .fifi-chart-card h4 { font-size:.82rem; font-weight:700; color:var(--text-sub); text-transform:uppercase; letter-spacing:.05em; margin-bottom:12px; }
-    [data-theme="dark"] .fifi-chart-card { border-color:#1e3d2e; }
+    [data-theme="dark"] .fifi-chart-card { border-color:#1e3050; }
 
     /* ── LANDING / HOMEPAGE ──────────────────────── */
     .landing-hero {
@@ -767,7 +781,7 @@
       font-size: 3.2rem; margin-bottom: 14px; display: inline-flex;
       align-items: center; justify-content: center;
       width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-radius: 22px; color: #fff; box-shadow: 0 6px 24px rgba(27,94,69,.3);
+      border-radius: 22px; color: #fff; box-shadow: 0 6px 24px rgba(26,58,92,.3);
     }
     .landing-title {
       font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -803,10 +817,10 @@
     .landing-card::before {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(135deg, transparent 60%, rgba(82,183,136,.08));
+      background: linear-gradient(135deg, transparent 60%, rgba(13,148,136,.08));
       pointer-events: none;
     }
-    .landing-card:hover { box-shadow: 0 8px 32px rgba(45,106,79,.22); transform: translateY(-4px); border-color: var(--accent); }
+    .landing-card:hover { box-shadow: 0 8px 32px rgba(26,58,92,.22); transform: translateY(-4px); border-color: var(--accent); }
     .landing-card:active { transform: translateY(-1px); }
 
     .lc-icon { font-size: 2.4rem; margin-bottom: 4px; }
@@ -822,12 +836,222 @@
       font-size: .68rem; font-weight: 700; padding: 2px 9px;
       border-radius: 50px; letter-spacing: .04em;
     }
-    .lc-badge.new  { background: #d8f3dc; color: var(--primary); }
+    .lc-badge.new  { background: #dbeafe; color: var(--primary); }
     .lc-badge.soon { background: #fff3cd; color: #856404; }
     .lc-badge.ai   { background: #e8d5f9; color: #6a2c8e; }
     [data-theme="dark"] .lc-badge.soon { background: #332a00; color: #ffd666; }
     [data-theme="dark"] .lc-badge.new  { background: var(--light); color: var(--primary); }
     [data-theme="dark"] .lc-badge.ai   { background: #2a1040; color: #c084fc; }
+
+    /* ── DAILY QUOTE ────────────────────────────────── */
+    .daily-quote-wrap {
+      max-width: 760px; margin: 0 auto 32px; padding: 0 20px;
+    }
+    .daily-quote-card {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: linear-gradient(135deg, rgba(26,58,92,.07) 0%, rgba(13,148,136,.12) 100%);
+      border: 1px solid rgba(13,148,136,.28);
+      border-left: 4px solid var(--accent);
+      border-radius: 14px;
+      padding: 18px 22px;
+      box-shadow: 0 2px 12px rgba(26,58,92,.08);
+    }
+    [data-theme="dark"] .daily-quote-card {
+      background: linear-gradient(135deg, rgba(26,58,92,.18) 0%, rgba(13,148,136,.12) 100%);
+      border-color: rgba(13,148,136,.35);
+    }
+    .dq-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; opacity: .8; }
+    .dq-body { flex: 1; min-width: 0; }
+    .dq-label {
+      font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 7px; opacity: .85;
+    }
+    .dq-text {
+      font-style: italic; font-size: clamp(.88rem, 1.8vw, 1.02rem);
+      color: var(--primary); line-height: 1.65; font-weight: 500;
+    }
+    [data-theme="dark"] .dq-text { color: #74c6e4; }
+    .dq-author {
+      margin-top: 8px; font-size: .76rem; color: var(--text-sub);
+      font-weight: 600; letter-spacing: .02em;
+    }
+
+    /* ── DAILY FACTS ────────────────────────────────── */
+    .daily-facts-wrap {
+      max-width: 760px; margin: 0 auto 28px; padding: 0 20px;
+    }
+    .daily-facts-card {
+      background: linear-gradient(135deg, rgba(26,73,113,.06) 0%, rgba(82,160,183,.1) 100%);
+      border: 1px solid rgba(82,160,183,.28);
+      border-left: 4px solid #1a92c2;
+      border-radius: 14px;
+      padding: 14px 20px;
+      box-shadow: 0 2px 10px rgba(26,73,113,.07);
+    }
+    [data-theme="dark"] .daily-facts-card {
+      background: linear-gradient(135deg, rgba(26,73,113,.2) 0%, rgba(82,160,183,.12) 100%);
+      border-color: rgba(82,160,183,.35);
+    }
+    .df-header {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 9px;
+    }
+    .df-header-icon { font-size: 1rem; opacity: .8; }
+    .df-header-label {
+      font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: #1a92c2; opacity: .9;
+    }
+    .df-list {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .df-item {
+      display: flex; align-items: baseline; gap: 8px;
+      line-height: 1.45; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .df-bullet {
+      flex-shrink: 0; width: 7px; height: 7px; border-radius: 2px;
+      background: #1a92c2; opacity: .75; margin-top: 1px; align-self: center;
+    }
+    .df-text {
+      font-size: clamp(.78rem, 1.5vw, .88rem); color: var(--text);
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;
+    }
+    [data-theme="dark"] .df-text { color: #b0d8ee; }
+    .df-source {
+      flex-shrink: 0; font-size: .65rem; font-weight: 700; color: #1a92c2;
+      background: rgba(26,146,194,.12); padding: 1px 7px; border-radius: 50px;
+      white-space: nowrap; letter-spacing: .02em; max-width: 160px;
+      overflow: hidden; text-overflow: ellipsis;
+    }
+    [data-theme="dark"] .df-source { background: rgba(26,146,194,.2); color: #74c6e4; }
+
+    /* ── HOME TWO-COLUMN LAYOUT ─────────────────────── */
+    .home-layout {
+      display: flex; gap: 24px; align-items: flex-start;
+      width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 16px 40px;
+    }
+    .home-left  { flex: 1; min-width: 0; }
+    .home-right {
+      width: 330px; flex-shrink: 0;
+      position: sticky; top: 16px;
+      max-height: calc(100vh - 130px);
+      overflow-y: auto;
+      scrollbar-width: thin; scrollbar-color: rgba(217,119,6,.3) transparent;
+    }
+    .home-right::-webkit-scrollbar { width: 4px; }
+    .home-right::-webkit-scrollbar-thumb { background: rgba(217,119,6,.3); border-radius: 4px; }
+    @media (max-width: 900px) {
+      .home-layout { flex-direction: column; }
+      .home-right  { width: 100%; position: static; max-height: none; overflow-y: visible; }
+    }
+
+    /* ── HOME COCO PANEL ─────────────────────────────── */
+    .home-coco-panel { background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+    .hcp-header { display:flex; align-items:center; gap:10px; padding:14px 16px 12px; background:linear-gradient(135deg,#92400e,#d97706); color:#fff; }
+    .hcp-icon   { font-size:1.4rem; flex-shrink:0; }
+    .hcp-info   { flex:1; min-width:0; }
+    .hcp-title  { font-size:.88rem; font-weight:800; }
+    .hcp-date   { font-size:.68rem; opacity:.82; margin-top:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .hcp-refresh { background:rgba(255,255,255,.18); border:none; color:#fff; width:28px; height:28px; border-radius:50%; font-size:.85rem; cursor:pointer; transition:background .15s; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+    .hcp-refresh:hover:not(:disabled) { background:rgba(255,255,255,.35); }
+    .hcp-refresh:disabled { opacity:.35; cursor:not-allowed; }
+
+    .hcp-body { padding:12px 14px; display:flex; flex-direction:column; gap:10px; }
+
+    .hcp-empty { text-align:center; padding:24px 16px; }
+    .hcp-empty-icon { font-size:2rem; margin-bottom:8px; }
+    .hcp-empty-text { font-size:.83rem; color:var(--text-sub); line-height:1.5; margin-bottom:14px; }
+    .hcp-gen-btn { background:linear-gradient(135deg,#92400e,#d97706); border:none; color:#fff; padding:9px 20px; border-radius:50px; font-size:.82rem; font-weight:700; cursor:pointer; transition:all .18s; }
+    .hcp-gen-btn:hover { box-shadow:0 3px 12px rgba(217,119,6,.35); }
+
+    .hcp-loading { display:flex; align-items:center; gap:10px; padding:20px 16px; color:var(--text-sub); font-size:.84rem; }
+    .hcp-spinner { width:16px; height:16px; border:2px solid rgba(217,119,6,.25); border-top-color:#d97706; border-radius:50%; animation:cocoSpin .75s linear infinite; flex-shrink:0; }
+
+    .hcp-article { background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:11px 13px; transition:box-shadow .15s,border-color .15s; position:relative; }
+    .hcp-article::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:linear-gradient(180deg,#f59e0b,#92400e); border-radius:3px 0 0 3px; }
+    .hcp-article:hover { box-shadow:0 3px 12px rgba(217,119,6,.12); border-color:rgba(217,119,6,.3); }
+    .hcp-art-top { display:flex; align-items:center; gap:7px; margin-bottom:6px; }
+    .hcp-num    { flex-shrink:0; width:20px; height:20px; background:linear-gradient(135deg,#d97706,#92400e); color:#fff; border-radius:50%; font-size:.66rem; font-weight:800; display:flex; align-items:center; justify-content:center; }
+    .hcp-topic  { font-size:.65rem; font-weight:700; background:rgba(217,119,6,.12); color:#92400e; padding:2px 8px; border-radius:50px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:170px; }
+    [data-theme="dark"] .hcp-topic { background:rgba(217,119,6,.22); color:#fcd34d; }
+    .hcp-art-title { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; font-size:.81rem; font-weight:700; color:var(--primary); line-height:1.35; margin-bottom:6px; text-decoration:none; transition:color .15s; }
+    .hcp-art-title:hover { color:#d97706; text-decoration:underline; }
+    .hcp-art-points { list-style:none; margin:0 0 7px; padding:0; display:flex; flex-direction:column; gap:3px; }
+    .hcp-art-points li { font-size:.75rem; color:var(--text); line-height:1.45; padding-left:12px; position:relative; }
+    .hcp-art-points li::before { content:'•'; position:absolute; left:0; color:#d97706; font-weight:700; }
+    .hcp-art-footer { display:flex; align-items:center; justify-content:space-between; gap:8px; padding-top:7px; border-top:1px solid var(--border); }
+    .hcp-journal { font-size:.69rem; color:var(--text-sub); font-style:italic; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
+    .hcp-read   { font-size:.71rem; font-weight:700; color:#d97706; text-decoration:none; white-space:nowrap; flex-shrink:0; transition:color .15s; }
+    .hcp-read:hover { color:#92400e; text-decoration:underline; }
+
+    .hcp-view-all-wrap { margin:4px -14px -12px; }
+    .hcp-view-all { display:block; text-align:center; padding:10px 14px; font-size:.78rem; font-weight:700; color:#d97706; cursor:pointer; border-top:1px solid var(--border); text-decoration:none; transition:background .15s; }
+    .hcp-view-all:hover { background:rgba(217,119,6,.06); text-decoration:none; }
+
+    /* ── COCO ───────────────────────────────────────── */
+    .coco-wrap { max-width:880px; margin:0 auto; padding-bottom:2rem; }
+    .coco-header { display:flex; align-items:center; gap:18px; background:linear-gradient(135deg,#92400e,#d97706); color:#fff; border-radius:16px; padding:22px 28px; margin-bottom:24px; }
+    .coco-avatar { font-size:2.8rem; flex-shrink:0; }
+    .coco-header h2 { font-size:1.3rem; font-weight:800; margin-bottom:4px; }
+    .coco-header p  { font-size:.86rem; opacity:.85; line-height:1.5; }
+
+    .coco-setup { background:var(--surface); border:1.5px solid var(--border); border-radius:14px; padding:24px 28px; margin-bottom:24px; }
+    .coco-setup h3 { font-size:1.05rem; font-weight:800; color:var(--primary); margin-bottom:4px; }
+    .coco-setup-sub { font-size:.84rem; color:var(--text-sub); margin-bottom:18px; }
+    .coco-section-label { font-size:.72rem; font-weight:700; color:var(--text-sub); letter-spacing:.06em; text-transform:uppercase; margin:18px 0 9px; }
+    .coco-sites-grid  { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:7px; }
+    .coco-topics-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:7px; }
+    .coco-check-label { display:flex; align-items:flex-start; gap:10px; padding:9px 12px; border:1.5px solid var(--border); border-radius:10px; cursor:pointer; transition:all .15s; background:var(--bg); }
+    .coco-check-label:hover { border-color:#d97706; background:rgba(217,119,6,.06); }
+    .coco-check-label input { flex-shrink:0; margin-top:3px; accent-color:#d97706; width:14px; height:14px; cursor:pointer; }
+    .coco-check-info { display:flex; flex-direction:column; gap:1px; min-width:0; }
+    .coco-check-name { font-size:.84rem; font-weight:700; color:var(--text); line-height:1.3; }
+    .coco-check-desc { font-size:.72rem; color:var(--text-sub); line-height:1.35; }
+    .coco-save-btn { background:linear-gradient(135deg,#92400e,#d97706); border:none; color:#fff; padding:11px 28px; border-radius:50px; font-size:.92rem; font-weight:700; cursor:pointer; transition:all .18s; }
+    .coco-save-btn:hover { box-shadow:0 4px 16px rgba(217,119,6,.4); transform:translateY(-1px); }
+    .coco-cancel-btn { background:var(--surface); border:1.5px solid var(--border); color:var(--text-sub); padding:11px 20px; border-radius:50px; font-size:.88rem; font-weight:700; cursor:pointer; transition:all .18s; }
+    .coco-cancel-btn:hover { border-color:#d97706; color:#d97706; }
+
+    .coco-controls { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:20px; }
+    .coco-date-label { flex:1; font-size:.9rem; font-weight:600; color:var(--text-sub); }
+    .coco-refresh-btn { background:linear-gradient(135deg,#92400e,#d97706); border:none; color:#fff; padding:9px 22px; border-radius:50px; font-size:.84rem; font-weight:700; cursor:pointer; transition:all .18s; }
+    .coco-refresh-btn:hover:not(:disabled) { box-shadow:0 3px 14px rgba(217,119,6,.35); transform:translateY(-1px); }
+    .coco-refresh-btn:disabled { opacity:.4; cursor:not-allowed; transform:none; }
+    .coco-prefs-btn { background:var(--surface); border:1.5px solid var(--border); color:var(--text-sub); padding:9px 18px; border-radius:50px; font-size:.84rem; font-weight:700; cursor:pointer; transition:all .18s; }
+    .coco-prefs-btn:hover { border-color:#d97706; color:#d97706; }
+
+    .coco-status { padding:12px 18px; border-radius:10px; font-size:.88rem; margin-bottom:18px; display:none; }
+    .coco-status.loading { display:flex; align-items:center; gap:12px; background:rgba(217,119,6,.08); color:#92400e; border:1px solid rgba(217,119,6,.22); }
+    .coco-status.error   { display:block; background:#fdecea; color:#c0392b; border:1px solid rgba(192,57,43,.25); }
+    [data-theme="dark"] .coco-status.loading { background:rgba(217,119,6,.15); color:#fcd34d; border-color:rgba(217,119,6,.3); }
+    [data-theme="dark"] .coco-status.error   { background:rgba(192,57,43,.15); color:#fca5a5; border-color:rgba(192,57,43,.3); }
+    .coco-spinner { width:18px; height:18px; border:2.5px solid rgba(217,119,6,.25); border-top-color:#d97706; border-radius:50%; animation:cocoSpin .75s linear infinite; flex-shrink:0; }
+    @keyframes cocoSpin { to { transform:rotate(360deg); } }
+
+    .coco-articles { display:flex; flex-direction:column; gap:16px; }
+    .coco-article { background:var(--surface); border:1.5px solid var(--border); border-radius:14px; padding:20px 24px 18px; transition:box-shadow .18s,border-color .18s; position:relative; overflow:hidden; }
+    .coco-article::before { content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:linear-gradient(180deg,#f59e0b,#92400e); border-radius:4px 0 0 4px; }
+    .coco-article:hover { box-shadow:0 4px 20px rgba(217,119,6,.14); border-color:rgba(217,119,6,.35); }
+    .ca-top  { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; }
+    .ca-num  { flex-shrink:0; width:26px; height:26px; background:linear-gradient(135deg,#d97706,#92400e); color:#fff; border-radius:50%; font-size:.75rem; font-weight:800; display:flex; align-items:center; justify-content:center; }
+    .ca-meta { display:flex; flex-wrap:wrap; align-items:center; gap:6px; flex:1; }
+    .ca-topic   { background:rgba(217,119,6,.13); color:#92400e; font-size:.7rem; font-weight:700; padding:2px 10px; border-radius:50px; letter-spacing:.04em; white-space:nowrap; }
+    .ca-journal { font-size:.75rem; color:var(--text-sub); font-weight:600; }
+    .ca-date    { font-size:.73rem; color:var(--text-sub); }
+    [data-theme="dark"] .ca-topic { background:rgba(217,119,6,.22); color:#fcd34d; }
+    .ca-title   { font-size:1rem; font-weight:800; color:var(--primary); line-height:1.35; margin-bottom:6px; cursor:pointer; text-decoration:none; display:block; transition:color .15s; }
+    .ca-title:hover { color:#d97706; text-decoration:underline; }
+    .ca-authors { font-size:.79rem; color:var(--text-sub); margin-bottom:10px; font-style:italic; }
+    .ca-points  { list-style:none; margin:0 0 10px; padding:0; display:flex; flex-direction:column; gap:5px; }
+    .ca-points li { display:flex; align-items:baseline; gap:8px; font-size:.87rem; line-height:1.5; color:var(--text); }
+    .ca-points li::before { content:''; flex-shrink:0; width:7px; height:7px; border-radius:2px; background:#d97706; opacity:.75; align-self:center; }
+    .ca-summary  { font-size:.85rem; color:var(--text-sub); line-height:1.65; margin-bottom:12px; border-top:1px solid var(--border); padding-top:10px; }
+    .ca-read-btn { display:inline-flex; align-items:center; gap:6px; background:rgba(217,119,6,.1); color:#92400e; border:1px solid rgba(217,119,6,.28); border-radius:50px; padding:6px 18px; font-size:.8rem; font-weight:700; cursor:pointer; text-decoration:none; transition:all .18s; }
+    .ca-read-btn:hover { background:#d97706; color:#fff; border-color:#d97706; }
+    [data-theme="dark"] .ca-read-btn { background:rgba(217,119,6,.18); color:#fcd34d; border-color:rgba(217,119,6,.35); }
+    [data-theme="dark"] .ca-read-btn:hover { background:#d97706; color:#fff; }
+    .coco-empty { text-align:center; padding:40px 20px; color:var(--text-sub); font-size:.92rem; }
 
     /* ── KAIGO ─────────────────────────────────────── */
     .kaigo-wrap { max-width: 820px; margin: 0 auto; }
@@ -917,11 +1141,11 @@
     @keyframes khw-pulse { 0%,100%{opacity:1} 50%{opacity:.6} }
     .khw-wk-dates { font-size:.68rem; color:var(--text-sub); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     .khw-phase-chip { border-radius:50px; padding:2px 8px; font-size:.62rem; font-weight:700; white-space:nowrap; align-self:flex-start; }
-    .khw-phase-1 { background:#d1f0e0; color:#1b5e45; }
+    .khw-phase-1 { background:#d1f0e0; color:#1a3a5c; }
     .khw-phase-2 { background:#dde8ff; color:#1a3a8e; }
     .khw-phase-3 { background:#ffe0e0; color:#8e1a1a; }
     .khw-phase-x { background:var(--light); color:var(--text-sub); }
-    [data-theme="dark"] .khw-phase-1 { background:#0d3020; color:#52b788; }
+    [data-theme="dark"] .khw-phase-1 { background:#0c1a30; color:#5eead4; }
     [data-theme="dark"] .khw-phase-2 { background:#0d1e40; color:#90aef8; }
     [data-theme="dark"] .khw-phase-3 { background:#3a0d0d; color:#f89090; }
     .khw-focus { font-size:.76rem; color:var(--text); line-height:1.4; font-weight:500; flex:1; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
@@ -1028,6 +1252,11 @@
       <span class="nav-icon">🗓️</span>
       <span class="nav-label">Study Planner</span>
     </div>
+
+    <div class="nav-item" id="nav-coco" data-tip="Daily Surgery Brief" onclick="goCoco()">
+      <span class="nav-icon">🤖</span>
+      <span class="nav-label">Coco — Daily Brief</span>
+    </div>
   </div>
 
   <div class="sb-footer">
@@ -1059,58 +1288,107 @@
 
   <!-- LANDING / HOME VIEW -->
   <div class="view active" id="view-home">
-    <div class="landing-hero">
-      <div class="landing-logo">✚</div>
-      <div class="landing-title">FRACS 2026<br>General Surgery</div>
-      <div class="landing-subtitle">Your AI-powered surgical exam preparation dashboard — study smarter, operate with confidence.</div>
-    </div>
-    <div class="landing-grid">
+    <div class="home-layout">
 
-      <div class="landing-card" onclick="goTopics()">
-        <span class="lc-badge new">Study</span>
-        <div class="lc-icon">📚</div>
-        <div class="lc-title">Curriculum Topics</div>
-        <div class="lc-desc">Browse all FRACS General Surgery topics. Use Chagchag &amp; Pluto to generate study notes and slides.</div>
-        <span class="lc-arrow">Open ›</span>
-      </div>
+      <!-- LEFT COLUMN — hero, quote, facts, nav cards, Kaigo widget -->
+      <div class="home-left">
 
-      <div class="landing-card" onclick="goMockSAQ()">
-        <span class="lc-badge new">Exam</span>
-        <div class="lc-icon">✏️</div>
-        <div class="lc-title">Mock SAQ Exam</div>
-        <div class="lc-desc">Timed short-answer exam drawn from your Questions Database — no two sessions are the same.</div>
-        <span class="lc-arrow">Start ›</span>
-      </div>
+        <div class="landing-hero">
+          <div class="landing-logo">✚</div>
+          <div class="landing-title">FRACS 2026<br>General Surgery</div>
+          <div class="landing-subtitle">Your AI-powered surgical exam preparation dashboard — study smarter, operate with confidence.</div>
+        </div>
 
-      <div class="landing-card" onclick="goMockVIVA()">
-        <span class="lc-badge soon">Soon</span>
-        <div class="lc-icon">🎙️</div>
-        <div class="lc-title">Mock VIVA Exam</div>
-        <div class="lc-desc">AI examiner asks FRACS-style viva questions and challenges your answers in real time.</div>
-        <span class="lc-arrow">Coming soon ›</span>
-      </div>
+        <!-- Daily motivational quote -->
+        <div class="daily-quote-wrap">
+          <div class="daily-quote-card" id="daily-quote-card">
+            <div class="dq-icon">💬</div>
+            <div class="dq-body">
+              <div class="dq-label">Daily Inspiration</div>
+              <div class="dq-text" id="dq-text"></div>
+              <div class="dq-author" id="dq-author"></div>
+            </div>
+          </div>
+        </div>
 
-      <div class="landing-card" onclick="goAnalysis()">
-        <span class="lc-badge soon">Soon</span>
-        <div class="lc-icon">📊</div>
-        <div class="lc-title">SAQ / VIVA Analysis</div>
-        <div class="lc-desc">Review your past session scores, identify weak areas, and track your progress over time.</div>
-        <span class="lc-arrow">Coming soon ›</span>
-      </div>
+        <!-- Daily facts from Pluto slides (hidden until facts exist) -->
+        <div class="daily-facts-wrap" id="daily-facts-wrap" style="display:none">
+          <div class="daily-facts-card">
+            <div class="df-header">
+              <span class="df-header-icon">💡</span>
+              <span class="df-header-label">From Your Slides — Daily Facts</span>
+            </div>
+            <ul class="df-list" id="df-list"></ul>
+          </div>
+        </div>
 
-      <div class="landing-card" onclick="goKaigo()">
-        <span class="lc-badge ai">AI Planner</span>
-        <div class="lc-icon">🗓️</div>
-        <div class="lc-title">Study Planner — Kaigo</div>
-        <div class="lc-desc">Kaigo builds a personalised week-by-week study schedule from your exam date and progress so far.</div>
-        <span class="lc-arrow">Plan ›</span>
-      </div>
+        <div class="landing-grid">
 
-    </div>
+          <div class="landing-card" onclick="goTopics()">
+            <span class="lc-badge new">Study</span>
+            <div class="lc-icon">📚</div>
+            <div class="lc-title">Curriculum Topics</div>
+            <div class="lc-desc">Browse all FRACS General Surgery topics. Use Chagchag &amp; Pluto to generate study notes and slides.</div>
+            <span class="lc-arrow">Open ›</span>
+          </div>
 
-    <!-- KAIGO WEEKLY CALENDAR -->
-    <div id="kaigo-home-widget"></div>
+          <div class="landing-card" onclick="goMockSAQ()">
+            <span class="lc-badge new">Exam</span>
+            <div class="lc-icon">✏️</div>
+            <div class="lc-title">Mock SAQ Exam</div>
+            <div class="lc-desc">Timed short-answer exam drawn from your Questions Database — no two sessions are the same.</div>
+            <span class="lc-arrow">Start ›</span>
+          </div>
 
+          <div class="landing-card" onclick="goMockVIVA()">
+            <span class="lc-badge soon">Soon</span>
+            <div class="lc-icon">🎙️</div>
+            <div class="lc-title">Mock VIVA Exam</div>
+            <div class="lc-desc">AI examiner asks FRACS-style viva questions and challenges your answers in real time.</div>
+            <span class="lc-arrow">Coming soon ›</span>
+          </div>
+
+          <div class="landing-card" onclick="goAnalysis()">
+            <span class="lc-badge soon">Soon</span>
+            <div class="lc-icon">📊</div>
+            <div class="lc-title">SAQ / VIVA Analysis</div>
+            <div class="lc-desc">Review your past session scores, identify weak areas, and track your progress over time.</div>
+            <span class="lc-arrow">Coming soon ›</span>
+          </div>
+
+          <div class="landing-card" onclick="goKaigo()">
+            <span class="lc-badge ai">AI Planner</span>
+            <div class="lc-icon">🗓️</div>
+            <div class="lc-title">Study Planner — Kaigo</div>
+            <div class="lc-desc">Kaigo builds a personalised week-by-week study schedule from your exam date and progress so far.</div>
+            <span class="lc-arrow">Plan ›</span>
+          </div>
+
+        </div>
+
+        <!-- KAIGO WEEKLY CALENDAR -->
+        <div id="kaigo-home-widget"></div>
+
+      </div><!-- /home-left -->
+
+      <!-- RIGHT COLUMN — Coco daily brief (sticky, scrollable) -->
+      <div class="home-right">
+        <div class="home-coco-panel" id="home-coco-panel">
+          <div class="hcp-header">
+            <span class="hcp-icon">🤖</span>
+            <div class="hcp-info">
+              <div class="hcp-title">Coco — Daily Brief</div>
+              <div class="hcp-date" id="hcp-date"></div>
+            </div>
+            <button class="hcp-refresh" id="hcp-refresh-btn" onclick="homeCocoRefresh()" title="Refresh brief">🔄</button>
+          </div>
+          <div class="hcp-body" id="hcp-body">
+            <!-- populated by renderHomeCocoBrief() -->
+          </div>
+        </div>
+      </div><!-- /home-right -->
+
+    </div><!-- /home-layout -->
   </div>
 
   <!-- TOPICS VIEW -->
@@ -1236,6 +1514,54 @@
     <div id="progress-table-container"></div>
   </div>
 
+  <!-- COCO VIEW -->
+  <div class="view" id="view-coco">
+    <div class="coco-wrap">
+
+      <div class="coco-header">
+        <div class="coco-avatar">🤖</div>
+        <div>
+          <h2>Coco — Daily Surgery Brief</h2>
+          <p>Your AI research assistant. Every day, Coco searches the surgical literature and surfaces 5 trending articles relevant to your FRACS preparation — with summaries, key findings, and direct links.</p>
+        </div>
+      </div>
+
+      <!-- Setup / Preferences panel -->
+      <div id="coco-setup-panel" style="display:none">
+        <div class="coco-setup">
+          <h3>⚙️ Set Up Your Preferences</h3>
+          <p class="coco-setup-sub">Choose which sources Coco searches and which FRACS topics to prioritise. These are saved and used for every daily brief.</p>
+
+          <div class="coco-section-label">📰 Sources to search (select at least one)</div>
+          <div class="coco-sites-grid" id="coco-sites-grid"></div>
+
+          <div class="coco-section-label">🎯 FRACS curriculum topics to focus on (select at least one)</div>
+          <div class="coco-topics-grid" id="coco-topics-grid"></div>
+
+          <div style="display:flex;gap:10px;margin-top:22px;flex-wrap:wrap">
+            <button class="coco-save-btn" onclick="saveCocoPrefsAndRun()">💾 Save &amp; Generate Brief</button>
+            <button class="coco-cancel-btn" id="coco-cancel-btn" onclick="cancelCocoPrefs()" style="display:none">✕ Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brief display panel -->
+      <div id="coco-main-panel" style="display:none">
+        <div class="coco-controls">
+          <div class="coco-date-label" id="coco-date-label"></div>
+          <button class="coco-refresh-btn" id="coco-refresh-btn" onclick="runCoco(true)">🔄 Refresh Brief</button>
+          <button class="coco-prefs-btn" onclick="showCocoSetup(true)">⚙️ Change Preferences</button>
+        </div>
+        <div class="coco-status" id="coco-status">
+          <div class="coco-spinner"></div>
+          <span id="coco-status-text">Coco is searching the surgical literature…</span>
+        </div>
+        <div class="coco-articles" id="coco-articles"></div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- TOPIC VIEW -->
   <div class="view" id="view-topic">
     <div class="section-header">
@@ -1333,6 +1659,9 @@ const QB_LAST_SET_PREFIX  = 'fracs_qb_last_';
 const THUFLA_PREFIX       = 'fracs_thufla_';
 const VIVA_LAST_SET_PREFIX = 'fracs_viva_last_';
 const SAQ_SESSION_PREFIX  = 'fracs_saq_sess_';
+const PLUTO_FACTS_KEY     = 'fracs_pluto_facts';
+const COCO_PREFS_KEY      = 'fracs_coco_prefs';
+const COCO_BRIEF_KEY      = 'fracs_coco_brief';
 
 const SEED_DATA = [
   { name: 'Abdominal Wall, Retroperitoneum & Urogenital', subtopics: [
@@ -1564,7 +1893,23 @@ function uid() {
 function loadData() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) {
+      const data = JSON.parse(raw);
+      // Migration: add any SEED_DATA topics missing from stored data
+      let changed = false;
+      SEED_DATA.forEach(seedTopic => {
+        if (!data.topics.find(t => t.name === seedTopic.name)) {
+          data.topics.push({
+            id: uid(),
+            name: seedTopic.name,
+            subtopics: seedTopic.subtopics.map(s => ({ id: uid(), name: s, studyMaterial: '', saq: '', viva: '' })),
+          });
+          changed = true;
+        }
+      });
+      if (changed) saveData(data);
+      return data;
+    }
   } catch(e) {}
   // Seed on first load with full GS curriculum
   const topics = SEED_DATA.map(t => ({
@@ -1647,6 +1992,7 @@ function updateSidebarActive(view) {
     'analysis':  'nav-analysis',
     'progress':  'nav-progress',
     'kaigo':     'nav-kaigo',
+    'coco':      'nav-coco',
   };
   document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
   const id = map[view];
@@ -1712,11 +2058,236 @@ function goBack() {
   else goHome();
 }
 
+// ─── DAILY QUOTE ──────────────────────────────────────────────────────────────
+const DAILY_QUOTES = [
+  { text: "The secret of getting ahead is getting started. Surgery rewards those who begin.", author: "Mark Twain (adapted)" },
+  { text: "Success is the sum of small efforts, repeated day in and day out.", author: "Robert Collier" },
+  { text: "The expert in anything was once a beginner. Every consultant started where you are.", author: "Helen Hayes (adapted)" },
+  { text: "It's not about perfect. It's about effort. And when you bring that effort every single day, that's where transformation happens.", author: "Jillian Michaels" },
+  { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+  { text: "Knowing is not enough; we must apply. Willing is not enough; we must do.", author: "Johann Wolfgang von Goethe" },
+  { text: "The difference between ordinary and extraordinary is that little extra.", author: "Jimmy Johnson" },
+  { text: "A surgeon who operates without understanding anatomy is like an architect who builds without understanding physics.", author: "Surgical Wisdom" },
+  { text: "Medicine is a science of uncertainty and an art of probability. Master both.", author: "William Osler (adapted)" },
+  { text: "Opportunity is missed by most people because it is dressed in overalls and looks like work.", author: "Thomas Edison" },
+  { text: "The art of medicine consists of amusing the patient while nature cures the disease — but surgery is where you help nature along.", author: "Voltaire (adapted)" },
+  { text: "Hard work beats talent when talent doesn't work hard. Outwork everyone in that exam room.", author: "Tim Notke" },
+  { text: "In surgery, as in life, preparation separates the good from the great.", author: "Surgical Wisdom" },
+  { text: "Push yourself, because no one else is going to do it for you.", author: "Unknown" },
+  { text: "The more that you read, the more things you will know. The more that you learn, the more places you'll go.", author: "Dr. Seuss" },
+  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+  { text: "A good surgeon knows how to operate; a great surgeon knows when not to.", author: "Surgical Wisdom" },
+  { text: "Every patient is a teacher. Every case is a lesson. Every day is a chance to get better.", author: "Surgical Wisdom" },
+  { text: "Your future self will thank you for the study sessions your present self is reluctant to start.", author: "Surgical Wisdom" },
+  { text: "Medicine is learned by the bedside and not in the classroom. But it is understood in the library.", author: "William Osler (adapted)" },
+  { text: "The FRACS exam is not a test of your limits — it's a test of your preparation.", author: "Surgical Wisdom" },
+  { text: "Stay patient and trust your journey. The fellowship is worth every sleepless night.", author: "Surgical Wisdom" },
+  { text: "Excellence is not a destination but a continuous journey that never ends.", author: "Brian Tracy" },
+  { text: "With confidence, you have won before you have started.", author: "Marcus Garvey" },
+  { text: "The climb may be steep, but the view from the top — FEA after your name — is worth every step.", author: "Surgical Wisdom" },
+  { text: "A brilliant surgical mind is built one question at a time, one case at a time, one revision at a time.", author: "Surgical Wisdom" },
+  { text: "What we learn with pleasure we never forget.", author: "Alfred Mercier" },
+  { text: "It always seems impossible until it's done.", author: "Nelson Mandela" },
+  { text: "You don't have to be great to start, but you have to start to be great.", author: "Zig Ziglar" },
+  { text: "The successful surgeon is not the one who never makes mistakes, but the one who learns from every single one.", author: "Surgical Wisdom" },
+  { text: "Study while others are sleeping. Work while others are loafing. Prepare while others are playing.", author: "William Arthur Ward" },
+  { text: "In medicine, three things matter most: reading, reading, and reading.", author: "William Osler" },
+  { text: "Do not wait to strike till the iron is hot, but make it hot by striking.", author: "William Butler Yeats" },
+  { text: "Your hardest times often lead to the greatest moments of your life. Keep going, Surgeon.", author: "Roy T. Bennett" },
+  { text: "You are not behind. You are exactly where you need to be, doing the work that others won't.", author: "Surgical Wisdom" },
+  { text: "The road to becoming a Fellow is not a sprint — it is a marathon run with a scalpel.", author: "Surgical Wisdom" },
+  { text: "Champions aren't made in gyms. Champions are made from something they have deep inside them — a desire, a dream, a vision.", author: "Muhammad Ali" },
+  { text: "Perseverance is not a long race; it is many short races one after the other.", author: "Walter Elliot" },
+  { text: "Complication management is the hallmark of a true surgeon. Learn to expect the unexpected.", author: "Surgical Wisdom" },
+  { text: "The more you sweat in study, the less you bleed in the exam theatre.", author: "Surgical Wisdom" },
+  { text: "Don't limit your challenges — challenge your limits.", author: "Jerry Dunn" },
+  { text: "Small daily improvements over time lead to stunning results.", author: "Robin Sharma" },
+  { text: "Every question you answer correctly today is a patient you will save tomorrow.", author: "Surgical Wisdom" },
+  { text: "First do no harm — and to do no harm, you must first know everything.", author: "Hippocrates (adapted)" },
+  { text: "The beautiful thing about learning is that nobody can take it away from you.", author: "B.B. King" },
+  { text: "Be so good they can't ignore you. That's what FRACS is asking of you.", author: "Steve Martin (adapted)" },
+  { text: "When you feel like quitting, think about why you started.", author: "Unknown" },
+  { text: "The most difficult thing is the decision to act; the rest is merely tenacity.", author: "Amelia Earhart" },
+  { text: "Your attitude, not your aptitude, will determine your altitude.", author: "Zig Ziglar" },
+  { text: "Knowledge is not power — applied knowledge is power. Revise. Practise. Ace.", author: "Surgical Wisdom" },
+  { text: "Anatomy is destiny. Know your anatomy and the operation will follow.", author: "Surgical Wisdom" },
+  { text: "We are what we repeatedly do. Excellence, then, is not an act but a habit.", author: "Aristotle" },
+  { text: "One day or day one — you decide.", author: "Unknown" },
+  { text: "The strength of the surgeon is not in their hands alone, but in the depth of their knowledge.", author: "Surgical Wisdom" },
+  { text: "Dream big, work hard, stay focused, and surround yourself with good people.", author: "Unknown" },
+  { text: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
+  { text: "Good things come to those who hustle while they wait.", author: "Anais Nin" },
+  { text: "Every master was once a disaster. Keep showing up.", author: "T. Harv Eker" },
+  { text: "Courage is going from failure to failure without losing enthusiasm — and presenting the next SAQ anyway.", author: "Winston Churchill (adapted)" },
+  { text: "Prepare for the worst, hope for the best, and take what comes — with a well-reasoned management plan.", author: "Surgical Wisdom" },
+  { text: "You have brains in your head, feet in your shoes. You can steer yourself any direction you choose.", author: "Dr. Seuss" },
+  { text: "The scariest moment is always just before you start. Then it becomes just surgery.", author: "Stephen King (adapted)" },
+  { text: "Act as if what you do makes a difference — because in surgery, it absolutely does.", author: "William James (adapted)" },
+  { text: "Learning never exhausts the mind; it only fills it with the tools to serve your patients better.", author: "Leonardo da Vinci (adapted)" },
+  { text: "Mistakes are the portals of discovery — in the operating theatre and the examination room alike.", author: "James Joyce (adapted)" },
+  { text: "Nothing in the world can take the place of persistence. Not talent. Not genius. Not education. Persistence alone is omnipotent.", author: "Calvin Coolidge" },
+  { text: "Education is the passport to the future, for tomorrow belongs to those who prepare for it today.", author: "Malcolm X" },
+  { text: "Strive not to be a success, but rather to be of value — to your patients, your team, and your craft.", author: "Albert Einstein (adapted)" },
+  { text: "The secret to doing well is not cleverness but the relentless application of effort over time.", author: "Surgical Wisdom" },
+  { text: "Resilience is knowing that you are the only one that has to get through your FRACS exam, and you are the one who will.", author: "Surgical Wisdom" },
+  { text: "No matter how you feel, get up, dress up, show up — and open that textbook.", author: "Regina Brett (adapted)" },
+];
+
+function renderDailyQuote() {
+  const dayIdx = Math.floor(Date.now() / 86400000); // days since epoch
+  const q = DAILY_QUOTES[dayIdx % DAILY_QUOTES.length];
+  const textEl   = document.getElementById('dq-text');
+  const authorEl = document.getElementById('dq-author');
+  if (textEl)   textEl.textContent   = '\u201c' + q.text + '\u201d';
+  if (authorEl) authorEl.textContent = '\u2014 ' + q.author;
+}
+
+// ─── PLUTO FACTS BANK ──────────────────────────────────────────────────────────
+// Called by plutoOpenViewer() every time slides are opened.
+// Extracts main-bullet facts from content slides and merges into the facts pool.
+function extractAndSavePlutoFacts(topicName, subName, slides) {
+  try {
+    const existing = JSON.parse(localStorage.getItem(PLUTO_FACTS_KEY) || '[]');
+    const existingKeys = new Set(existing.map(f => f.fact.substring(0, 50).toLowerCase()));
+    const added = [];
+
+    slides.forEach(sl => {
+      if (sl.type !== 'content' || !sl.body) return;
+      const lines = sl.body.split('\n');
+      lines.forEach(raw => {
+        const line = raw.trimEnd();
+        // Main bullet: starts (at col 0) with •, *, -, no leading whitespace
+        const isMain = /^[\u2022\*\-]\s+/.test(line);
+        if (!isMain) return;
+        const text = line.replace(/^[\u2022\*\-]\s+/, '').trim();
+        if (text.length < 12) return;                        // too short
+        if (text.length > 160) return;                       // too long for a single line
+        const key = text.substring(0, 50).toLowerCase();
+        if (existingKeys.has(key)) return;                   // deduplicate
+        existingKeys.add(key);
+        added.push({ fact: text, topic: topicName, sub: subName });
+      });
+    });
+
+    if (!added.length) return;
+    const merged = [...existing, ...added];
+    // Keep pool capped at 300 most-recent facts
+    const trimmed = merged.length > 300 ? merged.slice(merged.length - 300) : merged;
+    localStorage.setItem(PLUTO_FACTS_KEY, JSON.stringify(trimmed));
+  } catch(e) {
+    console.warn('extractAndSavePlutoFacts:', e);
+  }
+}
+
+function renderDailyFacts() {
+  const wrap = document.getElementById('daily-facts-wrap');
+  const list = document.getElementById('df-list');
+  if (!wrap || !list) return;
+
+  let allFacts;
+  try { allFacts = JSON.parse(localStorage.getItem(PLUTO_FACTS_KEY) || '[]'); }
+  catch(e) { allFacts = []; }
+
+  if (!allFacts.length) { wrap.style.display = 'none'; return; }
+
+  // Pick up to 5 facts using day-index + prime stride for even distribution
+  const dayIdx  = Math.floor(Date.now() / 86400000);
+  const n       = allFacts.length;
+  const stride  = 11; // prime — ensures good spread across topics
+  const picked  = [];
+  const seen    = new Set();
+  for (let i = 0; picked.length < 5 && i < n; i++) {
+    const idx  = (dayIdx + i * stride) % n;
+    const fact = allFacts[idx];
+    if (!seen.has(fact.fact)) { seen.add(fact.fact); picked.push(fact); }
+  }
+
+  list.innerHTML = picked.map(f => {
+    const text = f.fact.length > 110 ? f.fact.substring(0, 108) + '…' : f.fact;
+    const src  = f.sub.length  > 28  ? f.sub.substring(0, 26)  + '…' : f.sub;
+    return `<li class="df-item">
+      <span class="df-bullet"></span>
+      <span class="df-text">${text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span>
+      <span class="df-source">${src.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span>
+    </li>`;
+  }).join('');
+
+  wrap.style.display = '';
+}
+
+// ─── HOME COCO PANEL ────────────────────────────────────────────────────────
+function renderHomeCocoBrief() {
+  const body   = document.getElementById('hcp-body');
+  const dateEl = document.getElementById('hcp-date');
+  if (!body) return;
+
+  const todayKey = new Date().toISOString().split('T')[0];
+  if (dateEl) {
+    dateEl.textContent = new Date().toLocaleDateString('en-AU', { weekday:'short', day:'numeric', month:'short' });
+  }
+
+  let cached = null;
+  try { cached = JSON.parse(localStorage.getItem(COCO_BRIEF_KEY) || 'null'); } catch(e) {}
+
+  if (!cached || cached.date !== todayKey || !Array.isArray(cached.articles) || !cached.articles.length) {
+    body.innerHTML =
+      '<div class="hcp-empty">' +
+        '<div class="hcp-empty-icon">🤖</div>' +
+        '<div class="hcp-empty-text">No brief yet for today.<br>Let Coco search the surgical literature for you.</div>' +
+        '<button class="hcp-gen-btn" onclick="goCoco()">Generate Brief</button>' +
+      '</div>';
+    return;
+  }
+
+  const arts = cached.articles.slice(0, 5);
+  body.innerHTML = arts.map(function(art, i) {
+    const rawUrl = art.url || '';
+    const href   = /^https?:\/\//.test(rawUrl) ? rawUrl : ('https://' + rawUrl);
+    const pts    = (art.keyPoints || []).slice(0, 2)
+                     .map(function(p) { return '<li>' + escHtml(p) + '</li>'; }).join('');
+    return '<div class="hcp-article">' +
+      '<div class="hcp-art-top">' +
+        '<span class="hcp-num">' + (i + 1) + '</span>' +
+        '<span class="hcp-topic">' + escHtml(art.topic || 'General Surgery') + '</span>' +
+      '</div>' +
+      '<a class="hcp-art-title" href="' + href + '" target="_blank" rel="noopener noreferrer">' +
+        escHtml(art.title || '(Untitled)') +
+      '</a>' +
+      (pts ? '<ul class="hcp-art-points">' + pts + '</ul>' : '') +
+      '<div class="hcp-art-footer">' +
+        '<span class="hcp-journal">' + escHtml(art.journal || '') + '</span>' +
+        '<a href="' + href + '" target="_blank" rel="noopener noreferrer" class="hcp-read">Read &#8594;</a>' +
+      '</div>' +
+    '</div>';
+  }).join('') +
+  '<div class="hcp-view-all-wrap">' +
+    '<span class="hcp-view-all" onclick="goCoco()" role="button" tabindex="0">View Full Brief &#8594;</span>' +
+  '</div>';
+}
+
+function homeCocoRefresh() {
+  const btn  = document.getElementById('hcp-refresh-btn');
+  const body = document.getElementById('hcp-body');
+  if (btn)  btn.disabled = true;
+  if (body) body.innerHTML =
+    '<div class="hcp-loading">' +
+      '<div class="hcp-spinner"></div>' +
+      '<span>Searching surgical literature…</span>' +
+    '</div>';
+  // runCoco(force=true) will call renderHomeCocoBrief() on completion
+  runCoco(true).catch(function() {}).finally(function() {
+    if (btn) btn.disabled = false;
+  });
+}
+
 function goHome() {
   currentTopicId = null;
   currentSubtopicId = null;
   showView('home');
+  renderDailyQuote();
+  renderDailyFacts();
   renderKaigoHomeWidget();
+  renderHomeCocoBrief();
 }
 
 // ── Parse week rows from Kaigo's markdown plan ──────────────────────────────
@@ -1964,6 +2535,279 @@ function goKaigo() {
   }
   kaigoState = {};
   renderKaigoStep(1);
+}
+
+// ─── COCO — Daily Surgery Brief ───────────────────────────────────────────────
+
+const COCO_SITES = [
+  { id:'pubmed',      name:'PubMed',                     url:'pubmed.ncbi.nlm.nih.gov',                          desc:'Free abstracts from all medical literature' },
+  { id:'lancet',      name:'The Lancet',                  url:'thelancet.com',                                    desc:'Leading international medical journal' },
+  { id:'nejm',        name:'NEJM',                        url:'nejm.org',                                         desc:'New England Journal of Medicine' },
+  { id:'bmj',         name:'BMJ',                         url:'bmj.com',                                          desc:'British Medical Journal — open access' },
+  { id:'jama_surg',   name:'JAMA Surgery',                url:'jamanetwork.com/journals/jamasurgery',              desc:'American Surgical Association journal' },
+  { id:'annals',      name:'Annals of Surgery',           url:'journals.lww.com/annalsofsurgery',                 desc:"World's oldest surgical journal" },
+  { id:'bjs',         name:'British Journal of Surgery',  url:'academic.oup.com/bjs',                             desc:'Official BJS Society journal' },
+  { id:'world_surg',  name:'World Journal of Surgery',    url:'link.springer.com/journal/268',                    desc:'International surgical community' },
+  { id:'cochrane',    name:'Cochrane Library',            url:'cochranelibrary.com',                              desc:'Systematic reviews & meta-analyses' },
+  { id:'medscape',    name:'Medscape Surgery',            url:'medscape.com/surgery',                             desc:'Clinical news & CME content' },
+  { id:'acs',         name:'ACS',                         url:'facs.org',                                         desc:'American College of Surgeons guidelines' },
+  { id:'racs',        name:'RACS',                        url:'surgeons.org.au',                                  desc:'Royal Australasian College of Surgeons' },
+  { id:'surg_endosc', name:'Surgical Endoscopy',          url:'link.springer.com/journal/464',                    desc:'Minimally invasive & robotic surgery' },
+  { id:'int_surg',    name:'International J. Surgery',    url:'journals.lww.com/international-journal-of-surgery',desc:'Open-access surgical research' },
+  { id:'sci_direct',  name:'ScienceDirect (Surgery)',     url:'sciencedirect.com',                                desc:'Multi-journal surgical content' },
+];
+
+function loadCocoPrefs() {
+  try { return JSON.parse(localStorage.getItem(COCO_PREFS_KEY)); } catch(e) { return null; }
+}
+
+function goCoco() {
+  showView('coco');
+  updateSidebarActive('coco');
+  updateBreadcrumb();
+  const prefs = loadCocoPrefs();
+  if (!prefs) {
+    showCocoSetup(false);
+  } else {
+    showCocoMain();
+    runCoco(false); // use cached brief if same day
+  }
+}
+
+function showCocoSetup(isEdit = false) {
+  document.getElementById('coco-setup-panel').style.display = '';
+  if (!isEdit) document.getElementById('coco-main-panel').style.display = 'none';
+  const cancelBtn = document.getElementById('coco-cancel-btn');
+  if (cancelBtn) cancelBtn.style.display = isEdit ? '' : 'none';
+
+  const prefs = loadCocoPrefs() || {};
+  const selSites  = prefs.sites  || COCO_SITES.slice(0, 6).map(s => s.id);
+  const selTopics = prefs.topics || SEED_DATA.map(t => t.name);
+
+  const sitesGrid = document.getElementById('coco-sites-grid');
+  if (sitesGrid) {
+    sitesGrid.innerHTML = COCO_SITES.map(s => `
+      <label class="coco-check-label">
+        <input type="checkbox" name="coco-site" value="${s.id}" ${selSites.includes(s.id) ? 'checked' : ''}>
+        <div class="coco-check-info">
+          <span class="coco-check-name">${escHtml(s.name)}</span>
+          <span class="coco-check-desc">${escHtml(s.desc)}</span>
+        </div>
+      </label>`).join('');
+  }
+
+  const topicsGrid = document.getElementById('coco-topics-grid');
+  if (topicsGrid) {
+    topicsGrid.innerHTML = SEED_DATA.map(t => `
+      <label class="coco-check-label">
+        <input type="checkbox" name="coco-topic" value="${escHtml(t.name)}" ${selTopics.includes(t.name) ? 'checked' : ''}>
+        <div class="coco-check-info">
+          <span class="coco-check-name">${escHtml(t.name)}</span>
+        </div>
+      </label>`).join('');
+  }
+}
+
+function cancelCocoPrefs() {
+  document.getElementById('coco-setup-panel').style.display = 'none';
+}
+
+function saveCocoPrefsAndRun() {
+  const siteSel  = Array.from(document.querySelectorAll('input[name="coco-site"]:checked')).map(b => b.value);
+  const topicSel = Array.from(document.querySelectorAll('input[name="coco-topic"]:checked')).map(b => b.value);
+  if (!siteSel.length)  { showToast('Please select at least one source.');  return; }
+  if (!topicSel.length) { showToast('Please select at least one topic.'); return; }
+  localStorage.setItem(COCO_PREFS_KEY, JSON.stringify({ sites: siteSel, topics: topicSel, updatedAt: new Date().toISOString() }));
+  document.getElementById('coco-setup-panel').style.display = 'none';
+  showCocoMain();
+  runCoco(true); // force fresh brief after saving prefs
+}
+
+function showCocoMain() {
+  document.getElementById('coco-main-panel').style.display = '';
+  const today = new Date().toLocaleDateString('en-AU', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+  const lbl = document.getElementById('coco-date-label');
+  if (lbl) lbl.textContent = '📅 ' + today;
+}
+
+function setCocoStatus(msg, isLoading) {
+  const el  = document.getElementById('coco-status');
+  const txt = document.getElementById('coco-status-text');
+  if (!el) return;
+  if (!msg) { el.style.display = 'none'; return; }
+  el.style.display = '';
+  el.className = 'coco-status ' + (isLoading ? 'loading' : 'error');
+  if (txt) txt.textContent = msg;
+}
+
+async function runCoco(forceRefresh) {
+  const apiKey = getApiKey();
+  if (!apiKey) { openSettings(); showToast('Please enter your Anthropic API key first'); return; }
+
+  const prefs = loadCocoPrefs();
+  if (!prefs) { showCocoSetup(false); return; }
+
+  // Use cached brief if same calendar day and not force-refreshing
+  const todayKey = new Date().toISOString().split('T')[0];
+  if (!forceRefresh) {
+    try {
+      const cached = JSON.parse(localStorage.getItem(COCO_BRIEF_KEY) || 'null');
+      if (cached && cached.date === todayKey && Array.isArray(cached.articles) && cached.articles.length) {
+        renderCocoArticles(cached.articles);
+        setCocoStatus('', false);
+        return;
+      }
+    } catch(e) {}
+  }
+
+  const refreshBtn = document.getElementById('coco-refresh-btn');
+  if (refreshBtn) refreshBtn.disabled = true;
+  document.getElementById('coco-articles').innerHTML = '';
+  setCocoStatus('🤖 Coco is searching the surgical literature…', true);
+
+  try {
+    const siteList  = prefs.sites.map(id => COCO_SITES.find(s => s.id === id)).filter(Boolean).map(s => s.name + ' (' + s.url + ')').join(', ');
+    const topicList = prefs.topics.join(', ');
+    const todayStr  = new Date().toLocaleDateString('en-AU', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+
+    const rawText = await cocoAgenticLoop([{ role:'user', content: buildCocoPrompt(siteList, topicList, todayStr) }]);
+
+    let articles;
+    try {
+      const jsonStr  = rawText.replace(/^```(?:json)?\s*/m,'').replace(/\s*```\s*$/m,'').trim();
+      const arrMatch = jsonStr.match(/\[\s*\{[\s\S]*\}\s*\]/);
+      if (!arrMatch) throw new Error('no array');
+      articles = JSON.parse(arrMatch[0]);
+      if (!Array.isArray(articles) || !articles.length) throw new Error('empty');
+    } catch(e) {
+      throw new Error('Coco could not parse the article list — please try again.');
+    }
+
+    localStorage.setItem(COCO_BRIEF_KEY, JSON.stringify({ date: todayKey, articles, generatedAt: new Date().toISOString() }));
+    renderCocoArticles(articles);
+    renderHomeCocoBrief();   // keep home panel in sync
+    setCocoStatus('', false);
+    showToast('Coco found ' + articles.length + ' articles!');
+
+  } catch(err) {
+    setCocoStatus('❌ ' + err.message, false);
+    showToast('Coco error');
+  } finally {
+    if (refreshBtn) refreshBtn.disabled = false;
+  }
+}
+
+function buildCocoPrompt(siteList, topicList, todayStr) {
+  return `You are Coco, a medical research assistant for a FRACS General Surgery trainee preparing for the 2026 examination.
+
+Today is ${todayStr}.
+
+TASK: Search the web and find 5 recent, clinically relevant, trending general surgery articles.
+
+Preferred sources (search these, in order): ${siteList}
+
+FRACS curriculum topics to focus on: ${topicList}
+
+Search criteria:
+- Articles published preferably in the last 6 months (2024–2025)
+- Prioritise: randomised controlled trials, systematic reviews, meta-analyses, landmark clinical guidelines, and practice-changing research
+- Must be directly relevant to FRACS General Surgery Part B examination content
+- Must have a real, publicly accessible URL
+
+For each article provide a 60–100 word summary covering: study design, key findings, main conclusions, and FRACS exam relevance.
+
+Return ONLY a valid JSON array of exactly 5 objects. No markdown fences. No extra text.
+
+[
+  {
+    "title": "Full article title",
+    "authors": "First Author et al. (Year)",
+    "journal": "Journal or Source Name",
+    "date": "Month Year",
+    "url": "https://direct-url-to-article",
+    "topic": "FRACS curriculum topic (e.g., Colorectal, Breast)",
+    "summary": "60-100 word summary of study design, findings, conclusions, and FRACS relevance",
+    "keyPoints": ["Key clinical finding 1", "Key clinical finding 2", "Key clinical finding 3"]
+  }
+]`;
+}
+
+async function cocoAgenticLoop(initialMessages, maxTurns) {
+  maxTurns = maxTurns || 10;
+  const apiKey = getApiKey();
+  let messages = initialMessages.slice();
+
+  for (let turn = 0; turn < maxTurns; turn++) {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+        'anthropic-dangerous-direct-browser-access': 'true',
+      },
+      body: JSON.stringify({
+        model: 'claude-opus-4-6',
+        max_tokens: 10000,
+        tools: [{ type: 'web_search_20250305', name: 'web_search' }],
+        messages,
+      }),
+    });
+
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => ({}));
+      throw new Error(err.error?.message || 'API error ' + resp.status);
+    }
+
+    const data = await resp.json();
+
+    // Always record assistant turn
+    messages.push({ role: 'assistant', content: data.content });
+
+    if (data.stop_reason === 'end_turn') {
+      // Collect all text blocks from the final response
+      return data.content.filter(b => b.type === 'text').map(b => b.text).join('\n');
+    }
+
+    if (data.stop_reason === 'tool_use') {
+      // Acknowledge each tool_use block; Anthropic executes web_search server-side
+      const acks = data.content
+        .filter(b => b.type === 'tool_use')
+        .map(b => ({ type: 'tool_result', tool_use_id: b.id, content: '' }));
+      if (acks.length) messages.push({ role: 'user', content: acks });
+    }
+  }
+  throw new Error('Coco search loop did not complete — please try again.');
+}
+
+function renderCocoArticles(articles) {
+  const container = document.getElementById('coco-articles');
+  if (!container) return;
+  if (!articles || !articles.length) {
+    container.innerHTML = '<div class="coco-empty">No articles to display. Try refreshing.</div>';
+    return;
+  }
+  container.innerHTML = articles.map(function(art, i) {
+    const pts    = (art.keyPoints || []).slice(0, 3).map(p => '<li>' + escHtml(p) + '</li>').join('');
+    const safeU  = String(art.url || '').replace(/"/g,'%22').replace(/'/g,'%27');
+    const isHttp = /^https?:\/\//.test(art.url || '');
+    const href   = isHttp ? safeU : 'https://' + safeU;
+    return '<div class="coco-article">' +
+      '<div class="ca-top">' +
+        '<div class="ca-num">' + (i + 1) + '</div>' +
+        '<div class="ca-meta">' +
+          '<span class="ca-topic">' + escHtml(art.topic || 'General Surgery') + '</span>' +
+          '<span class="ca-journal">' + escHtml(art.journal || '') + '</span>' +
+          '<span class="ca-date">' + escHtml(art.date || '') + '</span>' +
+        '</div>' +
+      '</div>' +
+      '<a class="ca-title" href="' + href + '" target="_blank" rel="noopener noreferrer">' + escHtml(art.title || 'Untitled') + '</a>' +
+      (art.authors ? '<div class="ca-authors">' + escHtml(art.authors) + '</div>' : '') +
+      (pts ? '<ul class="ca-points">' + pts + '</ul>' : '') +
+      (art.summary ? '<div class="ca-summary">' + escHtml(art.summary) + '</div>' : '') +
+      '<a href="' + href + '" target="_blank" rel="noopener noreferrer" class="ca-read-btn">Read Article &#8594;</a>' +
+    '</div>';
+  }).join('');
 }
 
 const KAIGO_STEP_LABELS = [
@@ -2500,7 +3344,7 @@ function updateBreadcrumb() {
   bc.appendChild(home);
 
   // Second-level label
-  const viewLabels = { topics: 'Curriculum Topics', 'mock-saq': 'Mock SAQ Exam', 'mock-viva': 'Mock VIVA Exam', analysis: 'SAQ/VIVA Analysis' };
+  const viewLabels = { topics: 'Curriculum Topics', 'mock-saq': 'Mock SAQ Exam', 'mock-viva': 'Mock VIVA Exam', analysis: 'SAQ/VIVA Analysis', kaigo: 'Study Planner', progress: 'Progress Tracker', coco: 'Coco — Daily Brief' };
   const topLevel = currentTopicId ? 'topics' : (viewLabels[currentView] ? currentView : null);
 
   if (topLevel && viewLabels[topLevel]) {
@@ -2676,7 +3520,11 @@ function renderContent() {
         </div>
         <div class="agent-actions">
           <button class="agent-btn chagchag-btn" onclick="runChagchag()">🐶 Generate with Chagchag</button>
-          <button class="agent-btn pluto-btn" id="pluto-btn" onclick="runPluto()">🪐 Create Slides with Pluto</button>
+          <div class="pluto-group">
+            <span class="pluto-group-label">🪐 Pluto:</span>
+            <button class="agent-btn pluto-btn" id="pluto-btn-notes" onclick="runPluto('notes')" title="Generate slides from Chagchag notes or manual text">📝 From Notes</button>
+            <button class="agent-btn pluto-mirror-btn" id="pluto-btn-mirror" onclick="runPluto('mirror')" title="Mirror slides from an uploaded PowerPoint file">📊 Mirror PPTX</button>
+          </div>
         </div>
         <div class="agent-status" id="agent-status"></div>
       </div>` :
@@ -2719,8 +3567,19 @@ function renderContent() {
           <ul class="upload-file-list" id="pyq-file-list"></ul>
           <p class="upload-note">📁 Recommended folder: <code>FRACS-2026-app/past-year-questions/</code> — re-upload after a page refresh.</p>
         </div>
+        <div class="alnino-settings-row">
+          <div class="alnino-q-setting">
+            <label class="alnino-q-label">SAQ Questions:</label>
+            <input type="number" id="saq-q-count" class="alnino-q-input" min="1" max="20" value="10" title="Number of SAQ questions to generate">
+          </div>
+          <div class="alnino-q-setting">
+            <label class="alnino-q-label">MCQ Questions:</label>
+            <input type="number" id="mcq-q-count" class="alnino-q-input" min="1" max="30" value="10" title="Number of MCQ questions to generate">
+          </div>
+        </div>
         <div class="agent-actions">
           <button class="agent-btn alnino-btn" id="alnino-btn" onclick="runAlnino()">🎯 Generate SAQ with Alnino</button>
+          <button class="agent-btn alnino-mcq-btn" id="alnino-mcq-btn" onclick="runAlninoMCQ()">🟣 Generate MCQ with Alnino</button>
           <button class="agent-btn alnino-open-btn" id="open-saq-btn" onclick="openStoredSAQViewer()" style="${localStorage.getItem(ALNINO_PREFIX + sub.id) ? '' : 'display:none'}">📋 Open SAQ Session</button>
         </div>
         <div class="alnino-status" id="alnino-status"></div>
@@ -3702,7 +4561,7 @@ function buildVivaHtml(topicName, subName, vivaQs) {
 <title>VIVA — ${esc(subName)}</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--thufla:#6a2c8e;--thufla-h:#4e1f6a;--thufla-l:#f0e4fa;--primary:#2d6a4f;--light:#d8f3dc;--bg:#faf6ff;--text:#1a0a2e;--text-sub:#5a3a7a}
+:root{--thufla:#6a2c8e;--thufla-h:#4e1f6a;--thufla-l:#f0e4fa;--primary:#1a3a5c;--light:#dbeafe;--bg:#faf6ff;--text:#1a0a2e;--text-sub:#5a3a7a}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d0014;color:var(--text);overflow:hidden}
 
 /* ── SCREENS ── */
@@ -4033,13 +4892,23 @@ async function extractPptxText(arrayBuffer, fileName) {
       const num  = key.match(/(\d+)\.xml$/)[1];
       // Extract paragraphs: collect all <a:t> runs within each <a:p>
       const paraBlocks = xml.match(/<a:p[\s>][\s\S]*?<\/a:p>/g) || [];
-      const lines = paraBlocks
-        .map(p => (p.match(/<a:t[^>]*>([\s\S]*?)<\/a:t>/g) || [])
+      const lines = paraBlocks.map(p => {
+        // Detect indentation level from <a:pPr lvl="N">
+        const lvlM    = p.match(/<a:pPr[^>]*\blvl="(\d+)"/);
+        const lvl     = lvlM ? parseInt(lvlM[1]) : 0;
+        // Detect explicit no-bullet vs has-bullet markers
+        const noBullet  = /<a:buNone\b/.test(p);
+        const hasBullet = !noBullet && (/<a:buChar\b/.test(p) || /<a:buAutoNum\b/.test(p) || lvl > 0);
+        // Collect text runs
+        const txt = (p.match(/<a:t[^>]*>([\s\S]*?)<\/a:t>/g) || [])
           .map(t => t.replace(/<[^>]+>/g, '')
             .replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>')
             .replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&apos;/g,"'"))
-          .join('').trim())
-        .filter(l => l.length > 0);
+          .join('').trim();
+        if (!txt) return '';
+        // Prefix with indent spaces + bullet marker so classifyLine() can detect hierarchy
+        return hasBullet ? '  '.repeat(lvl) + '\u2022 ' + txt : txt;
+      }).filter(l => l.length > 0);
       if (lines.length) slideTexts.push('[Slide ' + num + ']\n' + lines.join('\n'));
     }
     if (!slideTexts.length) return '(No text content found in ' + fileName + ')';
@@ -4110,9 +4979,14 @@ function setAgentStatus(msg, spinning) {
 }
 function setAgentBtns(disabled) {
   const cb = document.querySelector('.chagchag-btn');
-  const pb = document.getElementById('pluto-btn');
   if (cb) cb.disabled = disabled;
-  if (pb) pb.disabled = disabled;
+  setPlutoBtns(disabled);
+}
+function setPlutoBtns(disabled) {
+  ['pluto-btn-notes','pluto-btn-mirror'].forEach(id => {
+    const b = document.getElementById(id);
+    if (b) b.disabled = disabled;
+  });
 }
 function setAlninoStatus(msg, spinning) {
   const el = document.getElementById('alnino-status');
@@ -4122,8 +4996,10 @@ function setAlninoStatus(msg, spinning) {
     : `<span>${msg}</span>`;
 }
 function setAlninoBtn(disabled) {
-  const ab = document.getElementById('alnino-btn');
-  if (ab) ab.disabled = disabled;
+  ['alnino-btn','alnino-mcq-btn'].forEach(id => {
+    const b = document.getElementById(id);
+    if (b) b.disabled = disabled;
+  });
 }
 function openContentAndSlides(subId) {
   goContent(subId);
@@ -4363,47 +5239,211 @@ ${(s.references && s.references.length) ? s.references.map((r, i) => (i+1) + '. 
 }
 
 // ─── PLUTO ────────────────────────────────────────────────────────────────────
-async function runPluto() {
+// ─── PLUTO — main entry point ─────────────────────────────────────────────────
+async function runPluto(mode) {
   if (typeof PptxGenJS === 'undefined') {
-    showToast('PptxGenJS not loaded — check internet connection');
-    return;
+    showToast('PptxGenJS not loaded — check internet connection'); return;
   }
-
   const topic = db.topics.find(t => t.id === currentTopicId);
-  const sub   = topic.subtopics.find(s => s.id === currentSubtopicId);
+  const sub   = topic?.subtopics.find(s => s.id === currentSubtopicId);
+  if (!topic || !sub) return;
 
-  const rawStored = localStorage.getItem(CHAGCHAG_PREFIX + sub.id);
-  let sections = null;
-  if (rawStored) { try { sections = JSON.parse(rawStored); } catch(e) {} }
-
-  const rawText = (document.getElementById('ta-studyMaterial')?.value || sub.studyMaterial || '').trim();
-  if (!sections && !rawText) {
-    showToast('No content yet — run Chagchag first or add notes manually.');
-    return;
-  }
-
-  setAgentBtns(true);
-  setAgentStatus('🪐 Pluto is building slides…', true);
-
-  const uploadedFiles = getSubFiles();
-
+  // Gather files: upload zone + KB dir + doc shelf
+  const sessionFiles = getSubFiles();
+  let shelfEntries = [];
   try {
-    await generatePptx(topic.name, sub.name, sub.id, sections, rawText, uploadedFiles);
-    localStorage.setItem(SLIDES_FLAG_PREFIX + sub.id, '1');
-    if (sections) {
-      openSlidePresentation(topic.name, sub.name, sections, uploadedFiles);
-      setAgentStatus('✅ Slides downloaded + presentation opening in new tab!', false);
-      showToast('Slides done — opening presentation!');
-    } else {
-      setAgentStatus('✅ Slides downloaded! Check your Downloads folder.', false);
-      showToast('Slides created and downloaded!');
+    const shelfDocs = await loadDocsForSub(currentSubtopicId);
+    shelfEntries = await docsToFileEntries(shelfDocs);
+  } catch(e) { console.warn('Pluto: shelf load failed', e); }
+  const allFiles = [...sessionFiles, ...kbFiles, ...shelfEntries];
+
+  if (mode === 'mirror') {
+    // ── Mirror a PowerPoint slide-by-slide ───────────────────────────────────
+    const pptxFiles = allFiles.filter(f => f.kind === 'pptx' && f.content && f.content.includes('[Slide '));
+    if (!pptxFiles.length) {
+      showToast('No PowerPoint found — upload a PPTX to the doc shelf or upload zone first.');
+      setAgentStatus('⚠️ No PowerPoint file available. Upload a .pptx file, then click Mirror PPTX again.', false);
+      return;
     }
-  } catch(err) {
-    setAgentStatus('❌ ' + err.message, false);
-    showToast('Pluto error');
-  } finally {
-    setAgentBtns(false);
+    const src = pptxFiles[0];
+    setAgentBtns(true);
+    setAgentStatus(`🪐 Pluto is mirroring <strong>${escHtml(src.name)}</strong>…`, true);
+    try {
+      await generatePptxFromSourceSlides(topic.name, sub.name, sub.id, src);
+      localStorage.setItem(SLIDES_FLAG_PREFIX + sub.id, '1');
+      const parsed     = parsePptxSlides(src.content);
+      const imageFiles = allFiles.filter(f => f.kind === 'image');
+      const slides     = buildPresentationSlidesFromPptx(topic.name, sub.name, parsed, imageFiles);
+      plutoOpenViewer(topic.name, sub.name, slides, []);
+      setAgentStatus(`✅ Mirrored <strong>${parsed.length}</strong> slides from "${escHtml(src.name)}" — PPTX downloaded &amp; viewer opening.`, false);
+      showToast('Pluto mirrored your PowerPoint!');
+    } catch(err) {
+      setAgentStatus('❌ ' + err.message, false);
+      showToast('Pluto error');
+    } finally { setAgentBtns(false); }
+
+  } else {
+    // ── Generate from Chagchag notes or manual text ──────────────────────────
+    const rawStored = localStorage.getItem(CHAGCHAG_PREFIX + sub.id);
+    let sections = null;
+    if (rawStored) { try { sections = JSON.parse(rawStored); } catch(e) {} }
+    const rawText = (document.getElementById('ta-studyMaterial')?.value || sub.studyMaterial || '').trim();
+
+    if (!sections && !rawText) {
+      showToast('No notes found — run Chagchag first, or add study notes manually.');
+      setAgentStatus('⚠️ No notes available. Run Chagchag first or add notes in the text area, then click From Notes.', false);
+      return;
+    }
+    setAgentBtns(true);
+    setAgentStatus('🪐 Pluto is building slides from notes…', true);
+    try {
+      await generatePptx(topic.name, sub.name, sub.id, sections, rawText, allFiles);
+      localStorage.setItem(SLIDES_FLAG_PREFIX + sub.id, '1');
+      if (sections) {
+        const slides = buildPresentationSlides(topic.name, sub.name, sections, allFiles);
+        plutoOpenViewer(topic.name, sub.name, slides, sections.references || []);
+        setAgentStatus('✅ Slides created from Chagchag notes — PPTX downloaded &amp; viewer opening.', false);
+        showToast('Slides ready!');
+      } else {
+        setAgentStatus('✅ Slides downloaded from manual notes. Check your Downloads folder.', false);
+        showToast('Slides created!');
+      }
+    } catch(err) {
+      setAgentStatus('❌ ' + err.message, false);
+      showToast('Pluto error');
+    } finally { setAgentBtns(false); }
   }
+}
+
+// Open the HTML slide viewer in a new tab
+function plutoOpenViewer(topicName, subName, slides, refs) {
+  // Bank facts before opening so the home page reflects them next visit
+  extractAndSavePlutoFacts(topicName, subName, slides);
+
+  const htmlStr = buildPresentationHtml(topicName, subName, slides, refs);
+  const blob    = new Blob([htmlStr], { type: 'text/html' });
+  const url     = URL.createObjectURL(blob);
+  const win     = window.open(url, '_blank');
+  setTimeout(() => URL.revokeObjectURL(url), 120000);
+  if (!win) {
+    const el = document.getElementById('agent-status');
+    if (el) el.innerHTML += ` &mdash; <a href="${url}" target="_blank" style="color:var(--accent);font-weight:700">Open viewer</a> (allow popups)`;
+  }
+}
+
+// Parse [Slide N] blocks produced by extractPptxText()
+function parsePptxSlides(pptxContent) {
+  if (!pptxContent) return [];
+  const slides = [];
+  const parts  = pptxContent.split(/\[Slide (\d+)\]/);
+  // parts layout: [preamble, num1, content1, num2, content2, …]
+  for (let i = 1; i < parts.length; i += 2) {
+    const num   = parseInt(parts[i]);
+    const block = (parts[i + 1] || '').trim();
+    if (!block) continue;
+    const lines = block.split('\n').filter(l => l.trim());
+    const title = lines[0] || 'Slide ' + num;
+    const body  = lines.slice(1).join('\n');
+    slides.push({ num, title, body });
+  }
+  return slides;
+}
+
+// Build slide-array for the HTML viewer from parsed PPTX slides
+function buildPresentationSlidesFromPptx(topicName, subName, parsedSlides, imageFiles) {
+  const slides = [{ type: 'title', topicName, subName }];
+  parsedSlides.forEach(s => {
+    slides.push({
+      type:     'content',
+      title:    s.title,
+      body:     s.body || '',
+      bar:      '#1a3a5c',
+      slideNum: s.num,
+    });
+  });
+  (imageFiles || []).forEach(f => slides.push({
+    type:    'image',
+    dataUrl: 'data:' + f.mediaType + ';base64,' + f.data,
+    caption: f.name,
+    credit:  'Uploaded by user',
+  }));
+  slides.push({ type: 'references', refs: [] });
+  return slides;
+}
+
+// Generate a downloadable PPTX mirroring the source slide-by-slide
+async function generatePptxFromSourceSlides(topicName, subName, subId, pptxFile) {
+  const pptx = new PptxGenJS();
+  pptx.layout = 'LAYOUT_WIDE';
+  pptx.author = 'FRACS 2026 Study Dashboard';
+  pptx.title  = subName;
+
+  const C = { PRIMARY:'1a3a5c', ACCENT:'0d9488', LIGHT:'dbeafe', BG:'f0f4f8', TEXT:'0f1e2e', WHITE:'ffffff' };
+
+  // ── Title slide ────────────────────────────────────────────────────────────
+  const ts = pptx.addSlide();
+  ts.background = { color: C.PRIMARY };
+  ts.addText(subName,   { x:0.5, y:1.5, w:12.33, h:2.2,  fontSize:36, bold:true, color:C.WHITE, align:'center', valign:'middle' });
+  ts.addText(topicName, { x:0.5, y:3.7, w:12.33, h:0.6,  fontSize:18, color:C.ACCENT, align:'center' });
+  ts.addText('FRACS 2026 — General Surgery Study Dashboard', { x:0.5, y:4.4, w:12.33, h:0.35, fontSize:11, color:C.LIGHT, align:'center', italic:true });
+  ts.addText('Source: ' + pptxFile.name, { x:0.5, y:4.85, w:12.33, h:0.35, fontSize:10, color:C.LIGHT, align:'center', italic:true });
+
+  // ── One slide per source slide ─────────────────────────────────────────────
+  const parsedSlides = parsePptxSlides(pptxFile.content);
+  for (const s of parsedSlides) {
+    const slide = pptx.addSlide();
+    slide.background = { color: C.BG };
+
+    // Header bar
+    slide.addShape(pptx.ShapeType.rect, {
+      x:0, y:0, w:13.33, h:0.9,
+      fill:{ color: C.PRIMARY }, line:{ color: C.PRIMARY },
+    });
+    // Slide title (left) + page number (right)
+    slide.addText(s.title, {
+      x:0.3, y:0.06, w:11.5, h:0.78,
+      fontSize:22, bold:true, color:C.WHITE, valign:'middle', wrap:true,
+    });
+    slide.addText(String(s.num), {
+      x:11.9, y:0.06, w:1.2, h:0.78,
+      fontSize:14, color:C.LIGHT, align:'right', valign:'middle',
+    });
+    // Sub-title bar (source name)
+    slide.addText(subName, { x:0.3, y:0.92, w:12, h:0.25, fontSize:9, color:C.ACCENT, italic:true });
+
+    // Body text — preserve bullet hierarchy
+    const lines = (s.body || '').split('\n').filter(l => l.trim());
+    if (lines.length) {
+      const bullets = lines.map(line => {
+        const indentSpaces = (line.match(/^(\s*)/)||['',''])[1].length;
+        const lvl        = Math.min(Math.floor(indentSpaces / 2), 4);
+        const isBullet   = /^\s*[\u2022\-\*]\s/.test(line);
+        const cleanText  = line.replace(/^\s*[\u2022\-\*]\s*/, '').trim();
+        return {
+          text: cleanText,
+          options: {
+            bullet:        isBullet,
+            indentLevel:   lvl,
+            fontSize:      Math.max(11, 15 - lvl),
+            color:         lvl > 0 ? '2d5a44' : C.TEXT,
+            breakLine:     true,
+            paraSpaceAfter: lvl > 0 ? 1 : 3,
+          },
+        };
+      });
+      slide.addText(bullets, { x:0.4, y:1.25, w:12.5, h:5.45, valign:'top', shrinkText:true });
+    }
+
+    // Footer
+    slide.addText('Source: ' + pptxFile.name, {
+      x:0.4, y:6.88, w:12.5, h:0.4,
+      fontSize:7, italic:true, color:C.ACCENT, valign:'bottom', align:'left',
+    });
+  }
+
+  const safeName  = subName.replace(/[^\w\s\-]/g, '').trim();
+  const safeSrc   = pptxFile.name.replace(/[^\w\s\-\.]/g, '').trim();
+  await pptx.writeFile({ fileName: safeName + ' — Slides (from ' + safeSrc + ').pptx' });
 }
 
 async function generatePptx(topicName, subName, subId, sections, rawText, uploadedFiles) {
@@ -4412,8 +5452,8 @@ async function generatePptx(topicName, subName, subId, sections, rawText, upload
   pptx.author = 'FRACS 2026 Study Dashboard';
   pptx.title  = subName;
 
-  const C = { PRIMARY:'2d6a4f', ACCENT:'52b788', LIGHT:'d8f3dc', BG:'f0f7f4',
-               TEXT:'1b3a2d', WHITE:'ffffff', SURGICAL:'1a4971' };
+  const C = { PRIMARY:'1a3a5c', ACCENT:'0d9488', LIGHT:'dbeafe', BG:'f0f4f8',
+               TEXT:'0f1e2e', WHITE:'ffffff', SURGICAL:'1a4971' };
 
   function addSlide(titleText, bodyText, barColor, footerText) {
     const slide = pptx.addSlide();
@@ -4545,11 +5585,12 @@ async function runAlnino() {
   // Also include files uploaded in the sub-topic upload zone and KB directory
   const subFileList = [...getSubFiles(), ...kbFiles];
   const allFiles    = [...pyqFileList, ...subFileList];
+  const saqCount = Math.max(1, Math.min(20, parseInt(document.getElementById('saq-q-count')?.value) || 10));
   setAlninoBtn(true);
-  setAlninoStatus('🎯 Alnino is generating SAQ questions…', true);
+  setAlninoStatus(`🎯 Alnino is generating ${saqCount} SAQ questions…`, true);
 
   try {
-    const prompt  = buildAlninoPrompt(topic.name, sub.name, chagchagSections, pyqFileList.length > 0, subFileList.length > 0);
+    const prompt  = buildAlninoPrompt(topic.name, sub.name, chagchagSections, pyqFileList.length > 0, subFileList.length > 0, saqCount);
     const content = buildMessageContent(prompt, allFiles);
 
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
@@ -4609,7 +5650,7 @@ async function runAlnino() {
   }
 }
 
-function buildAlninoPrompt(topicName, subName, sections, hasPyqFiles, hasSubFiles = false) {
+function buildAlninoPrompt(topicName, subName, sections, hasPyqFiles, hasSubFiles = false, count = 10) {
   const pyqInstruction = hasPyqFiles
     ? `\nI have attached past year FRACS SAQ papers. Analyse the style, format, mark allocation, and difficulty of these questions carefully. You may reproduce questions directly from the past papers (adapted to this sub-topic) OR create new questions that closely match their style and difficulty. Reference the past papers explicitly.\n`
     : '';
@@ -4624,7 +5665,7 @@ function buildAlninoPrompt(topicName, subName, sections, hasPyqFiles, hasSubFile
 
   return `You are Alnino, a FRACS General Surgery exam preparation AI specialising in Short Answer Questions (SAQs).${pyqInstruction}${subFileInstruction}${contextBlock}
 
-Generate exactly 10 FRACS-style SAQ questions with model answers for the sub-topic below. Return ONLY a valid JSON array — no markdown, no code fences, no explanation.
+Generate exactly ${count} FRACS-style SAQ questions with model answers for the sub-topic below. Return ONLY a valid JSON array — no markdown, no code fences, no explanation.
 
 Topic area: ${topicName}
 Sub-topic: ${subName}
@@ -4635,11 +5676,11 @@ Requirements:
 - Each question should be answerable in 5 minutes under exam conditions
 - Include mark allocation hints in brackets (e.g. [2 marks]) within the question where appropriate
 - Model answers must be comprehensive but concise, using bullet points
-- Cover the full breadth of the sub-topic across the 10 questions
+- Cover the full breadth of the sub-topic across the ${count} questions
 - Use Australian/British spelling
 - If past year papers were provided, prioritise reproducing or adapting those questions; otherwise create questions in that style
 
-Required JSON structure (array of 10 objects):
+Required JSON structure (array of ${count} objects):
 [
   {
     "question": "Full question text including any clinical scenario and mark allocations",
@@ -4776,8 +5817,8 @@ function buildSAQHtml(topicName, subName, saqs, minsPerQ) {
 <title>SAQ — ${esc(subName)}</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--primary:#1b5e45;--accent:#2a9d7c;--light:#d0ede5;--bg:#f4faf7;--text:#0d2318;--text-sub:#4a7a68;--border:#b2d8cb;--alnino:#b5451b;--alnino-l:#fdecea}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a1510;color:var(--text);overflow:hidden}
+:root{--primary:#1a3a5c;--accent:#0d9488;--light:#e0eaf4;--bg:#f0f4f8;--text:#0f1e2e;--text-sub:#4a6080;--border:#c4d4e4;--alnino:#b5451b;--alnino-l:#fdecea}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0c1524;color:var(--text);overflow:hidden}
 .screen{display:none;flex-direction:column;width:100vw;height:100vh;background:var(--bg)}
 
 /* Top bar */
@@ -4807,7 +5848,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .answer-box-wrap{margin-top:8px}
 .answer-label{display:block;font-size:.8rem;font-weight:700;color:var(--primary);margin-bottom:7px;text-transform:uppercase;letter-spacing:.05em}
 .answer-box{width:100%;min-height:140px;padding:13px 15px;border:2px solid var(--border);border-radius:10px;font-size:.95rem;font-family:inherit;color:var(--text);background:#fff;resize:vertical;outline:none;line-height:1.6;transition:border-color .2s}
-.answer-box:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(42,157,124,.12)}
+.answer-box:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(13,148,136,.12)}
 
 /* Your answer display on answer screen */
 .your-ans-box{background:#f9f4f0;border-left:4px solid var(--alnino);border-radius:0 8px 8px 0;padding:11px 15px;margin-bottom:16px;font-size:.88rem;line-height:1.6;color:#555;font-style:italic}
@@ -4817,7 +5858,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .orig-q{background:#fff;border-left:4px solid var(--accent);padding:11px 15px;border-radius:0 8px 8px 0;margin-bottom:16px;font-size:.9rem;line-height:1.6;color:#555}
 .a-content{font-size:clamp(.88rem,1.7vw,1.05rem);line-height:1.75}
 .alist{list-style:none;padding:0;margin:.2em 0}
-.alist li{padding:.3em 0 .3em 1.6em;position:relative;border-bottom:1px solid rgba(178,216,203,.3)}
+.alist li{padding:.3em 0 .3em 1.6em;position:relative;border-bottom:1px solid rgba(196,212,228,.3)}
 .alist li:last-child{border-bottom:none}
 .alist li::before{content:'';position:absolute;left:0;top:.62em;width:9px;height:9px;background:linear-gradient(135deg,var(--accent),var(--primary));border-radius:2px}
 .slist{list-style:none;padding:0;margin:.1em 0 .3em 1.8em}
@@ -4831,17 +5872,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .saq-btn{padding:11px 26px;border:none;border-radius:50px;font-size:.92rem;font-weight:700;cursor:pointer;transition:all .18s;letter-spacing:.02em}
 .finish-btn{background:linear-gradient(135deg,#8c3314,var(--alnino));color:#fff;box-shadow:0 3px 10px rgba(181,69,27,.3)}
 .finish-btn:hover{box-shadow:0 5px 16px rgba(181,69,27,.4);transform:scale(1.02)}
-.next-btn{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;box-shadow:0 3px 10px rgba(27,94,69,.25)}
-.next-btn:hover{box-shadow:0 5px 16px rgba(27,94,69,.35);transform:scale(1.02)}
+.next-btn{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;box-shadow:0 3px 10px rgba(26,58,92,.25)}
+.next-btn:hover{box-shadow:0 5px 16px rgba(26,58,92,.35);transform:scale(1.02)}
 .next-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
 
 /* Summary */
-.summary-screen{background:linear-gradient(145deg,#0d2318,#1b5e45);align-items:center;justify-content:center;overflow-y:auto}
+.summary-screen{background:linear-gradient(145deg,#0f1e2e,#1a3a5c);align-items:center;justify-content:center;overflow-y:auto}
 .summary-inner{text-align:center;color:#fff;padding:36px 32px;max-width:700px;width:100%}
 .summary-icon{font-size:4rem;margin-bottom:.5em}
 .summary-inner h1{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:.3em;font-weight:800}
 .summary-sub{color:var(--light);margin-bottom:1.5em;font-size:1rem;opacity:.9}
-.marking-status{font-size:.88rem;color:rgba(208,237,229,.8);margin-bottom:1em;min-height:22px;display:flex;align-items:center;justify-content:center;gap:8px}
+.marking-status{font-size:.88rem;color:rgba(180,210,240,.8);margin-bottom:1em;min-height:22px;display:flex;align-items:center;justify-content:center;gap:8px}
 .mark-spinner{width:14px;height:14px;border:2px solid rgba(255,255,255,.25);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
 @keyframes spin{to{transform:rotate(360deg)}}
 .score-table{background:rgba(255,255,255,.1);border-radius:14px;padding:16px 20px;margin-bottom:1em;text-align:left;font-size:.88rem;line-height:1.9;max-height:35vh;overflow-y:auto}
@@ -4852,7 +5893,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .chip-good{background:rgba(82,200,150,.3);color:#b7ffe0}
 .chip-mid{background:rgba(255,200,60,.25);color:#ffe8a0}
 .chip-low{background:rgba(220,80,60,.3);color:#ffc0b0}
-.total-score{font-size:1.5rem;font-weight:800;margin:.8em 0;color:#d0ede5}
+.total-score{font-size:1.5rem;font-weight:800;margin:.8em 0;color:#e0eaf4}
 .ai-feedback-box{background:rgba(255,255,255,.1);border-radius:14px;padding:18px 22px;margin:14px 0;text-align:left;font-size:.87rem;line-height:1.7}
 .ai-feedback-box h3{font-size:.95rem;font-weight:800;margin-bottom:12px;color:#b7ffe0}
 .ai-feedback-box ul{padding-left:1.4em;color:rgba(255,255,255,.85)}
@@ -5094,6 +6135,373 @@ async function openStoredSAQViewer() {
   openSAQViewer(topic.name, sub.name, session);
 }
 
+// ─── ALNINO MCQ ───────────────────────────────────────────────────────────────
+async function runAlninoMCQ() {
+  const apiKey = getApiKey();
+  if (!apiKey) { openSettings(); showToast('Please enter your Anthropic API key first'); return; }
+
+  const topic = db.topics.find(t => t.id === currentTopicId);
+  const sub   = topic?.subtopics.find(s => s.id === currentSubtopicId);
+  if (!topic || !sub) return;
+
+  let chagchagSections = null;
+  const rawStored = localStorage.getItem(CHAGCHAG_PREFIX + sub.id);
+  if (rawStored) { try { chagchagSections = JSON.parse(rawStored); } catch(e) {} }
+
+  const pyqFileList = getPyqFiles();
+  const subFileList = [...getSubFiles(), ...kbFiles];
+  const allFiles    = [...pyqFileList, ...subFileList];
+
+  const mcqCount = Math.max(1, Math.min(30, parseInt(document.getElementById('mcq-q-count')?.value) || 10));
+  setAlninoBtn(true);
+  setAlninoStatus(`🟣 Alnino is generating ${mcqCount} MCQ questions…`, true);
+
+  try {
+    const prompt  = buildMCQPrompt(topic.name, sub.name, chagchagSections, pyqFileList.length > 0, subFileList.length > 0, mcqCount);
+    const content = buildMessageContent(prompt, allFiles);
+
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+        'anthropic-dangerous-direct-browser-access': 'true',
+      },
+      body: JSON.stringify({
+        model: 'claude-opus-4-6',
+        max_tokens: 12000,
+        messages: [{ role: 'user', content }],
+      }),
+    });
+
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => ({}));
+      throw new Error(err.error?.message || 'API error ' + resp.status);
+    }
+
+    const data = await resp.json();
+    const raw  = data.content[0].text;
+
+    let mcqs;
+    try {
+      const jsonStr = raw.replace(/^```(?:json)?\s*/m, '').replace(/\s*```\s*$/m, '').trim();
+      mcqs = JSON.parse(jsonStr);
+      if (!Array.isArray(mcqs) || mcqs.length === 0) throw new Error('Expected JSON array');
+    } catch(e) {
+      throw new Error('Could not parse MCQ response — please try again.');
+    }
+
+    openMCQViewer(topic.name, sub.name, mcqs);
+    setAlninoStatus(`✅ MCQ session opening in new tab (${mcqs.length} questions)!`, false);
+    showToast('Alnino MCQ — opening in new tab!');
+
+  } catch(err) {
+    setAlninoStatus('❌ ' + err.message, false);
+    showToast('Alnino MCQ error');
+  } finally {
+    setAlninoBtn(false);
+  }
+}
+
+function buildMCQPrompt(topicName, subName, sections, hasPyqFiles, hasSubFiles = false, count = 10) {
+  const contextBlock = sections
+    ? `\nStructured study notes for context:\nDefinition: ${sections.definition || ''}\nEpidemiology: ${sections.epidemiology || ''}\nRisk Factors: ${sections.riskFactors || ''}\nClinical Features: ${sections.clinicalFeatures || ''}\nClassification: ${sections.classificationStagingGrading || ''}\nInvestigations: ${sections.investigations || ''}\nManagement: ${JSON.stringify(sections.management || {})}\n`
+    : '';
+  const pyqNote = hasPyqFiles ? '\nPast year FRACS SAQ papers are attached — use them to match style and content.\n' : '';
+  const subNote = hasSubFiles ? '\nAdditional sub-topic study files are attached — use them as primary content source.\n' : '';
+
+  return `You are Alnino, a FRACS General Surgery exam preparation AI. Your task is to generate high-quality Multiple Choice Questions (MCQs) for the sub-topic below.${pyqNote}${subNote}${contextBlock}
+
+Generate exactly ${count} FRACS-style MCQs. Return ONLY a valid JSON array — no markdown, no code fences, no explanation.
+
+Topic area: ${topicName}
+Sub-topic: ${subName}
+
+Requirements:
+- Questions at FRACS Part B level — clinically rigorous, not trivial
+- Each question has exactly 5 options (A–E); exactly one correct answer
+- Include a clear, educational explanation for why the correct answer is right and why distractors are wrong
+- Cover the full breadth of the sub-topic: anatomy, pathophysiology, clinical presentation, investigations, management, complications, prognosis
+- Use Australian/British spelling and FRACS terminology
+- Distractors must be plausible — avoid obviously wrong options
+
+Required JSON structure (array of ${count} objects):
+[
+  {
+    "question": "Full question stem, may include a clinical vignette",
+    "options": {
+      "A": "Option A text",
+      "B": "Option B text",
+      "C": "Option C text",
+      "D": "Option D text",
+      "E": "Option E text"
+    },
+    "correct": "B",
+    "explanation": "Explanation of why B is correct and why others are wrong"
+  }
+]`;
+}
+
+function openMCQViewer(topicName, subName, mcqs) {
+  try {
+    const htmlStr = buildMCQHtml(topicName, subName, mcqs);
+    const blob    = new Blob([htmlStr], { type: 'text/html' });
+    const url     = URL.createObjectURL(blob);
+    const win     = window.open(url, '_blank');
+    setTimeout(() => URL.revokeObjectURL(url), 120000);
+    if (!win) {
+      const el = document.getElementById('alnino-status');
+      if (el) el.innerHTML += ` &mdash; <a href="${url}" target="_blank" style="color:#5b3fa0;font-weight:700">Open MCQ Session</a> (allow popups)`;
+    }
+  } catch(e) {
+    console.error('openMCQViewer error:', e);
+  }
+}
+
+function buildMCQHtml(topicName, subName, mcqs) {
+  const total    = mcqs.length;
+  const topicEsc = topicName.replace(/`/g, '\\`');
+  const subEsc   = subName.replace(/`/g, '\\`');
+  const mcqsJson = JSON.stringify(mcqs).replace(/\\/g, '\\\\').replace(/`/g, '\\`');
+
+  function esc(s) {
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  let screens = '';
+  const letters = ['A','B','C','D','E'];
+
+  mcqs.forEach((q, i) => {
+    const isLast = (i === total - 1);
+    const opts   = letters.map(l => `
+      <label class="mcq-option" id="opt-${i}-${l}">
+        <input type="radio" name="mcq${i}" value="${l}" onchange="selectOption(${i},'${l}')">
+        <span class="opt-key">${l}</span>
+        <span class="opt-text">${esc(q.options[l] || '')}</span>
+      </label>`).join('');
+
+    screens += `
+<div class="screen mcq-screen" id="q${i}" ${i===0?'style="display:flex"':''}>
+  <div class="top-bar">
+    <div class="qnum">Question ${i+1} / ${total}</div>
+    <div class="marks-badge">1 mark</div>
+    <div class="progress-pill"><div class="progress-fill-mcq" id="prog${i}" style="width:${Math.round((i/total)*100)}%"></div></div>
+  </div>
+  <div class="q-body">
+    <div class="topic-chip">${esc(topicName)} &rsaquo; ${esc(subName)}</div>
+    <div class="q-text">${esc(q.question).replace(/\n/g,'<br>')}</div>
+    <div class="options-grid" id="opts${i}">${opts}</div>
+  </div>
+  <div class="bottom-bar">
+    <button class="saq-btn next-btn" id="next-btn${i}" onclick="${isLast ? 'finishMCQ()' : `nextMCQ(${i+1})`}" disabled>
+      ${isLast ? 'Finish &amp; See Results &#8594;' : 'Next Question &#8594;'}
+    </button>
+  </div>
+</div>`;
+  });
+
+  // Summary screen
+  screens += `
+<div class="screen summary-screen" id="summary">
+  <div class="summary-inner">
+    <div class="summary-icon">🎓</div>
+    <h1>MCQ Session Complete!</h1>
+    <p class="summary-sub">${esc(topicName)} &rsaquo; ${esc(subName)}</p>
+    <div class="total-score" id="total-score"></div>
+    <div class="score-table" id="score-table" style="text-align:left;margin:1em 0"></div>
+    <div class="review-box" id="review-box"></div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px">
+      <button class="saq-btn restart-btn" onclick="location.reload()">&#8635; Restart Session</button>
+    </div>
+  </div>
+</div>`;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MCQ — ${esc(subName)}</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--primary:#1a3a5c;--accent:#0d9488;--light:#e0eaf4;--bg:#f0f4f8;--text:#0f1e2e;--text-sub:#4a6080;--border:#c4d4e4;--mcq:#5b3fa0;--mcq-l:#ede9ff}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0c1524;color:var(--text);overflow:hidden}
+.screen{display:none;flex-direction:column;width:100vw;height:100vh;background:var(--bg)}
+.mcq-screen{background:var(--bg)}
+
+/* Top bar */
+.top-bar{display:flex;align-items:center;gap:16px;padding:14px 28px;background:linear-gradient(135deg,#3e2a72,var(--mcq));color:#fff;flex-shrink:0;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.qnum{font-size:1.05rem;font-weight:700;flex:1}
+.marks-badge{background:rgba(255,255,255,.2);padding:4px 12px;border-radius:50px;font-size:.82rem;font-weight:600;white-space:nowrap}
+.progress-pill{flex:0 0 120px;height:6px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden}
+.progress-fill-mcq{height:100%;background:#c9b8ff;border-radius:3px;transition:width .3s}
+
+/* Body */
+.q-body{flex:1;padding:22px 32px 16px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.topic-chip{display:inline-block;background:var(--mcq-l);color:var(--mcq);font-size:.78rem;font-weight:700;padding:4px 14px;border-radius:50px;margin-bottom:16px;border:1px solid rgba(91,63,160,.25)}
+.q-text{font-size:clamp(1rem,2vw,1.2rem);line-height:1.75;white-space:pre-wrap;margin-bottom:20px;font-weight:500}
+
+/* Options */
+.options-grid{display:flex;flex-direction:column;gap:9px}
+.mcq-option{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border:2px solid var(--border);border-radius:12px;cursor:pointer;transition:all .18s;background:#fff;user-select:none}
+.mcq-option:hover{border-color:var(--mcq);background:var(--mcq-l)}
+.mcq-option input[type=radio]{display:none}
+.opt-key{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:rgba(91,63,160,.12);color:var(--mcq);font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:all .18s}
+.opt-text{flex:1;line-height:1.55;font-size:.95rem;color:var(--text)}
+.mcq-option.selected{border-color:var(--mcq);background:var(--mcq-l)}
+.mcq-option.selected .opt-key{background:var(--mcq);color:#fff}
+.mcq-option.correct{border-color:#0d9488;background:#e0faf8}
+.mcq-option.correct .opt-key{background:#0d9488;color:#fff}
+.mcq-option.wrong{border-color:#c0392b;background:#fdecea}
+.mcq-option.wrong .opt-key{background:#c0392b;color:#fff}
+.mcq-option.revealed-correct{border-color:#0d9488;background:#e0faf8}
+.mcq-option.revealed-correct .opt-key{background:#0d9488;color:#fff}
+
+/* Bottom bar */
+.bottom-bar{flex-shrink:0;padding:14px 32px;background:#fff;border-top:2px solid var(--light);display:flex;justify-content:flex-end;align-items:center;gap:12px}
+.saq-btn{padding:11px 26px;border:none;border-radius:50px;font-size:.92rem;font-weight:700;cursor:pointer;transition:all .18s;letter-spacing:.02em}
+.next-btn{background:linear-gradient(135deg,#3e2a72,var(--mcq));color:#fff;box-shadow:0 3px 10px rgba(91,63,160,.3)}
+.next-btn:hover:not(:disabled){box-shadow:0 5px 16px rgba(91,63,160,.4);transform:scale(1.02)}
+.next-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.restart-btn{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.restart-btn:hover{background:rgba(255,255,255,.28)}
+
+/* Summary */
+.summary-screen{background:linear-gradient(145deg,#1a0d33,#3e2a72);align-items:center;justify-content:center;overflow-y:auto}
+.summary-inner{text-align:center;color:#fff;padding:36px 32px;max-width:720px;width:100%}
+.summary-icon{font-size:4rem;margin-bottom:.5em}
+.summary-inner h1{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:.3em;font-weight:800}
+.summary-sub{color:#c9b8ff;margin-bottom:1.5em;font-size:1rem;opacity:.9}
+.total-score{font-size:1.8rem;font-weight:800;margin:.8em 0;color:#dbeafe}
+.score-table{background:rgba(255,255,255,.1);border-radius:14px;padding:16px 20px;margin-bottom:1em;font-size:.85rem;line-height:1.9;max-height:28vh;overflow-y:auto;text-align:left}
+.score-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.08);padding:3px 0}
+.score-row:last-child{border-bottom:none}
+.score-row span:first-child{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.85}
+.score-chip{padding:1px 9px;border-radius:50px;font-weight:700;font-size:.8rem;flex-shrink:0}
+.chip-good{background:rgba(82,200,150,.3);color:#b7ffe0}
+.chip-low{background:rgba(220,80,60,.3);color:#ffc0b0}
+.review-box{background:rgba(255,255,255,.08);border-radius:14px;padding:18px 22px;text-align:left;font-size:.85rem;line-height:1.7;max-height:28vh;overflow-y:auto}
+.review-item{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.1)}
+.review-item:last-child{border-bottom:none}
+.review-q{color:#c9b8ff;font-weight:700;margin-bottom:4px}
+.review-ans{color:rgba(255,255,255,.75)}
+.review-correct{color:#6ee7b7}
+.review-wrong{color:#fca5a5}
+.review-exp{color:rgba(255,255,255,.6);font-size:.82rem;margin-top:5px;font-style:italic}
+
+/* Exit */
+#exit-btn{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;background:#4a3080;border:none;color:#fff;font-size:.85rem;font-weight:700;padding:8px 28px;border-radius:20px;cursor:pointer;transition:background .15s;box-shadow:0 2px 10px rgba(74,48,128,.5)}
+#exit-btn:hover{background:#3e2a72}
+</style>
+</head>
+<body>
+<button id="exit-btn" onclick="window.close()">&#8592; Exit</button>
+${screens}
+<script>
+var total=${total};
+var mcqs=${mcqsJson};
+var answers=new Array(total).fill(null);
+var topicName=\`${topicEsc}\`, subName=\`${subEsc}\`;
+
+function selectOption(qi, letter){
+  if(answers[qi]!==null)return; // already answered — locked until next question nav
+  answers[qi]=letter;
+  // Highlight selected
+  ['A','B','C','D','E'].forEach(function(l){
+    var el=document.getElementById('opt-'+qi+'-'+l);
+    if(el){ el.classList.remove('selected'); }
+  });
+  var sel=document.getElementById('opt-'+qi+'-'+letter);
+  if(sel) sel.classList.add('selected');
+  // Enable next button
+  var nb=document.getElementById('next-btn'+qi);
+  if(nb) nb.disabled=false;
+}
+
+function nextMCQ(nextIdx){
+  // Reveal current Q answer before moving
+  var prev=nextIdx-1;
+  revealAnswer(prev);
+  // Switch screens
+  document.getElementById('q'+prev).style.display='none';
+  var nxt=document.getElementById('q'+nextIdx);
+  if(nxt){ nxt.style.display='flex'; document.getElementById('prog'+nextIdx).style.width=Math.round((nextIdx/total)*100)+'%'; }
+}
+
+function revealAnswer(qi){
+  var correct=mcqs[qi].correct;
+  var chosen=answers[qi];
+  ['A','B','C','D','E'].forEach(function(l){
+    var el=document.getElementById('opt-'+qi+'-'+l);
+    if(!el)return;
+    // disable further selection
+    var inp=el.querySelector('input');
+    if(inp) inp.disabled=true;
+    el.style.cursor='default';
+    if(l===correct){ el.classList.add('revealed-correct'); }
+    if(l===chosen && l!==correct){ el.classList.add('wrong'); }
+  });
+}
+
+function finishMCQ(){
+  // Reveal last Q
+  revealAnswer(total-1);
+  // Build summary
+  var correct=0;
+  var rows='', reviewHtml='';
+  for(var i=0;i<total;i++){
+    var isCorrect=(answers[i]===mcqs[i].correct);
+    if(isCorrect) correct++;
+    var qSnip=(mcqs[i].question||'').substring(0,55);
+    var chip=isCorrect?'chip-good':'chip-low';
+    var chipTxt=isCorrect?'✓ Correct':'✗ Wrong';
+    rows+='<div class="score-row"><span>Q'+(i+1)+': '+escHtml(qSnip)+'…</span><span class="score-chip '+chip+'">'+chipTxt+'</span></div>';
+    var ansText=answers[i]?answers[i]+': '+(mcqs[i].options[answers[i]]||''):'No answer';
+    var correctText=mcqs[i].correct+': '+(mcqs[i].options[mcqs[i].correct]||'');
+    reviewHtml+='<div class="review-item"><div class="review-q">Q'+(i+1)+': '+escHtml((mcqs[i].question||'').substring(0,100))+'…</div>';
+    reviewHtml+='<div class="review-ans">Your answer: <span class="'+(isCorrect?'review-correct':'review-wrong')+'">'+escHtml(ansText)+'</span></div>';
+    if(!isCorrect) reviewHtml+='<div class="review-ans">Correct: <span class="review-correct">'+escHtml(correctText)+'</span></div>';
+    if(mcqs[i].explanation) reviewHtml+='<div class="review-exp">'+escHtml(mcqs[i].explanation)+'</div>';
+    reviewHtml+='</div>';
+  }
+  var pct=Math.round(correct/total*100);
+  document.getElementById('total-score').textContent=correct+' / '+total+' correct ('+pct+'%)';
+  document.getElementById('score-table').innerHTML=rows;
+  document.getElementById('review-box').innerHTML=reviewHtml;
+  // Switch to summary
+  document.getElementById('q'+(total-1)).style.display='none';
+  document.getElementById('summary').style.display='flex';
+  // Post to Fifi
+  postMCQSession(correct,total);
+}
+
+function postMCQSession(got,possible){
+  try{
+    if(window.opener && !window.opener.closed){
+      var marks=mcqs.map(function(q,i){return{question:q.question||'',score:answers[i]===q.correct?1:0,max:1,timeSecs:0};});
+      window.opener.postMessage({
+        type:'saq_session_result',
+        sessionType:'mcq',
+        topicName:topicName,
+        subName:subName,
+        totalScore:got,
+        maxScore:possible,
+        questions:marks,
+        completedAt:new Date().toISOString()
+      },'*');
+    }
+  }catch(e){}
+}
+
+function escHtml(s){
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+<\/script>
+</body>
+</html>`;
+}
+
 // ─── HTML SLIDE PRESENTATION ──────────────────────────────────────────────────
 function buildPresentationSlides(topicName, subName, sections, uploadedFiles) {
   const slides = [];
@@ -5105,24 +6513,24 @@ function buildPresentationSlides(topicName, subName, sections, uploadedFiles) {
 
   // Content slides
   const contentSlides = [
-    { title:'Definition',         body:sections.definition,         bar:'#2d6a4f' },
-    { title:'Epidemiology',       body:sections.epidemiology,       bar:'#2d6a4f' },
-    { title:'Risk Factors',       body:sections.riskFactors,        bar:'#2d6a4f' },
-    { title:'Clinical Features',  body:sections.clinicalFeatures,   bar:'#2d6a4f' },
+    { title:'Definition',         body:sections.definition,         bar:'#1a3a5c' },
+    { title:'Epidemiology',       body:sections.epidemiology,       bar:'#1a3a5c' },
+    { title:'Risk Factors',       body:sections.riskFactors,        bar:'#1a3a5c' },
+    { title:'Clinical Features',  body:sections.clinicalFeatures,   bar:'#1a3a5c' },
   ];
 
   if (sections.classificationStagingGrading && sections.classificationStagingGrading.trim()) {
     contentSlides.push({
       title: 'Classification / Staging / Grading',
       body:  sections.classificationStagingGrading,
-      bar:   '#52b788'
+      bar:   '#5eead4'
     });
   }
 
   contentSlides.push(
-    { title:'Differential Diagnosis', body:sections.differentialDiagnosis, bar:'#2d6a4f' },
-    { title:'Investigations',         body:sections.investigations,        bar:'#2d6a4f' },
-    { title:'Management — Conservative', body:m.conservative,              bar:'#2d6a4f' },
+    { title:'Differential Diagnosis', body:sections.differentialDiagnosis, bar:'#1a3a5c' },
+    { title:'Investigations',         body:sections.investigations,        bar:'#1a3a5c' },
+    { title:'Management — Conservative', body:m.conservative,              bar:'#1a3a5c' },
     { title:'Surgical — Principles',  body:surg.principles,  bar:'#1a4971' },
     { title:'Surgical — Pre-operative Preparation', body:surg.preOp,  bar:'#1a4971' },
     { title:'Surgical — Intraoperative Steps',      body:surg.intraOp, bar:'#1a4971' },
@@ -5152,6 +6560,7 @@ function buildPresentationSlides(topicName, subName, sections, uploadedFiles) {
   return slides;
 }
 
+// ─── PLUTO VIEWER ─────────────────────────────────────────────────────────────
 function buildPresentationHtml(topicName, subName, slides, refs) {
   function esc(s) {
     return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -5220,7 +6629,7 @@ function buildPresentationHtml(topicName, subName, slides, refs) {
 </div>`;
 
     } else if (sl.type === 'table') {
-      const barColor = sl.bar || '#2d6a4f';
+      const barColor = sl.bar || '#1a3a5c';
       const thead = '<tr>' + sl.headers.map(h => '<th>' + esc(h) + '</th>').join('') + '</tr>';
       const tbody = sl.rows.map(row => '<tr>' + row.map(c => '<td>' + esc(c) + '</td>').join('') + '</tr>').join('');
       slidesHtml += `<div class="slide${activeClass}" data-idx="${idx}">
@@ -5256,7 +6665,7 @@ function buildPresentationHtml(topicName, subName, slides, refs) {
         ? '<ol>' + sl.refs.map(r => '<li>' + esc(r) + '</li>').join('') + '</ol>'
         : '<p class="no-content">No references recorded for this topic.</p>';
       slidesHtml += `<div class="slide${activeClass}" data-idx="${idx}">
-  <div class="sbar" style="background:#2d6a4f">
+  <div class="sbar" style="background:#1a3a5c">
     <div class="sbar-inner">
       <span class="stitle">References</span>
       <span class="ssub">${esc(subName)}</span>
@@ -5270,8 +6679,8 @@ function buildPresentationHtml(topicName, subName, slides, refs) {
 </div>`;
 
     } else {
-      const barColor = sl.bar || '#2d6a4f';
-      slidesHtml += `<div class="slide${activeClass}" data-idx="${idx}">
+      const barColor = sl.bar || '#1a3a5c';
+      slidesHtml += `<div class="slide${activeClass}" data-idx="${idx}" data-raw-title="${esc(sl.title)}" data-raw-body="${esc(sl.body||'')}">
   <div class="sbar" style="background:${barColor}">
     <div class="sbar-inner">
       <span class="stitle">${esc(sl.title)}</span>
@@ -5296,19 +6705,21 @@ function buildPresentationHtml(topicName, subName, slides, refs) {
 body{background:#0d1710;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 
 /* ── SLIDE BASE ── */
-.slide{display:none;width:100vw;height:100vh;flex-direction:column;background:#f4faf6;position:absolute;top:0;left:0;opacity:0;transition:opacity .3s ease,transform .3s ease}
-.slide.active{display:flex;opacity:1;transform:none}
-.slide.slide-out{transform:translateX(-3%);opacity:0}
-.slide.slide-in{transform:translateX(3%);opacity:0}
+/* NOTE: transitions cannot fire when going from display:none → flex.
+   Use a CSS animation instead — animations always start from the 'from'
+   keyframe regardless of the element's prior display state.             */
+.slide{display:none;width:100vw;height:100vh;flex-direction:column;background:#f4faf6;position:absolute;top:0;left:0}
+.slide.active{display:flex;animation:slIn .22s ease both}
+@keyframes slIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 
 /* ── TITLE SLIDE ── */
-.slide-title{background:linear-gradient(145deg,#1b3a2d 0%,#2d6a4f 55%,#1a5c40 100%);align-items:center;justify-content:center;text-align:center;overflow:hidden}
-.title-deco{position:absolute;width:380px;height:380px;border-radius:50%;background:rgba(82,183,136,.08);top:-110px;left:-110px;pointer-events:none}
-.title-deco-br{top:auto;left:auto;bottom:-120px;right:-120px;width:340px;height:340px;background:rgba(82,183,136,.06)}
+.slide-title{background:linear-gradient(145deg,#0f1e2e 0%,#1a3a5c 55%,#1a5c40 100%);align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.title-deco{position:absolute;width:380px;height:380px;border-radius:50%;background:rgba(13,148,136,.08);top:-110px;left:-110px;pointer-events:none}
+.title-deco-br{top:auto;left:auto;bottom:-120px;right:-120px;width:340px;height:340px;background:rgba(13,148,136,.06)}
 .title-wrap{padding:48px 56px;max-width:860px;position:relative;z-index:1}
-.title-chip{display:inline-block;background:rgba(82,183,136,.25);color:#74c69d;font-size:clamp(.75rem,1.8vw,1.05rem);font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:1.2em;border:1px solid rgba(82,183,136,.3)}
+.title-chip{display:inline-block;background:rgba(13,148,136,.25);color:#74c6e4;font-size:clamp(.75rem,1.8vw,1.05rem);font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:1.2em;border:1px solid rgba(13,148,136,.3)}
 h1{color:#ffffff;font-size:clamp(1.9rem,5.5vw,3.5rem);font-weight:800;line-height:1.15;margin-bottom:.7em;letter-spacing:-.02em}
-.title-divider{width:64px;height:4px;background:linear-gradient(90deg,#52b788,#74c69d);border-radius:4px;margin:.8em auto 1em}
+.title-divider{width:64px;height:4px;background:linear-gradient(90deg,#5eead4,#74c6e4);border-radius:4px;margin:.8em auto 1em}
 .title-foot{color:rgba(216,243,220,.65);font-size:clamp(.65rem,1.4vw,.88rem);letter-spacing:.04em}
 
 /* ── HEADER BAR ── */
@@ -5319,7 +6730,7 @@ h1{color:#ffffff;font-size:clamp(1.9rem,5.5vw,3.5rem);font-weight:800;line-heigh
 .slide-counter-badge{flex-shrink:0;background:rgba(255,255,255,.18);color:#fff;font-size:clamp(.6rem,1.1vw,.78rem);font-weight:700;padding:4px 11px;border-radius:50px;white-space:nowrap;letter-spacing:.03em}
 
 /* ── CONTENT BODY ── */
-.sbody{flex:1;padding:2vh 3.5vw 1.5vh;overflow-y:auto;color:#1b3a2d;font-size:clamp(.82rem,1.65vw,1.08rem);line-height:1.7;scrollbar-width:thin;scrollbar-color:#b7e4c7 transparent}
+.sbody{flex:1;padding:2vh 3.5vw 1.5vh;overflow-y:auto;color:#0f1e2e;font-size:clamp(.82rem,1.65vw,1.08rem);line-height:1.7;scrollbar-width:thin;scrollbar-color:#b7e4c7 transparent}
 .sbody::-webkit-scrollbar{width:4px}
 .sbody::-webkit-scrollbar-thumb{background:#b7e4c7;border-radius:4px}
 
@@ -5336,7 +6747,7 @@ h1{color:#ffffff;font-size:clamp(1.9rem,5.5vw,3.5rem);font-weight:800;line-heigh
   content:'';
   position:absolute;left:0;top:.65em;
   width:10px;height:10px;
-  background:linear-gradient(135deg,#52b788,#2d6a4f);
+  background:linear-gradient(135deg,#5eead4,#1a3a5c);
   border-radius:3px;
   flex-shrink:0;
 }
@@ -5353,7 +6764,7 @@ h1{color:#ffffff;font-size:clamp(1.9rem,5.5vw,3.5rem);font-weight:800;line-heigh
 .sub-item::before{
   content:'›';
   position:absolute;left:0;top:.1em;
-  color:#52b788;
+  color:#5eead4;
   font-weight:700;
   font-size:1.1em;
 }
@@ -5362,35 +6773,35 @@ h1{color:#ffffff;font-size:clamp(1.9rem,5.5vw,3.5rem);font-weight:800;line-heigh
 .phead{
   margin:1em 0 .3em;
   font-weight:800;
-  color:#1b3a2d;
+  color:#0f1e2e;
   font-size:clamp(.88rem,1.85vw,1.18rem);
   padding-bottom:.25em;
-  border-bottom:2px solid #d8f3dc;
+  border-bottom:2px solid #dbeafe;
   letter-spacing:-.01em;
 }
 .phead:first-child{margin-top:0}
 .no-content{color:#4a7c6a;font-style:italic;padding:.5em 0}
 
 /* ── PROGRESS BAR ── */
-.progress-bar{flex-shrink:0;height:4px;background:rgba(45,106,79,.15)}
-.progress-fill{height:100%;background:linear-gradient(90deg,#52b788,#2d6a4f);transition:width .3s ease;border-radius:0 2px 2px 0}
+.progress-bar{flex-shrink:0;height:4px;background:rgba(26,58,92,.15)}
+.progress-fill{height:100%;background:linear-gradient(90deg,#5eead4,#1a3a5c);transition:width .3s ease;border-radius:0 2px 2px 0}
 
 /* ── REFERENCES ── */
 .refs-body{font-size:clamp(.68rem,1.3vw,.9rem)}
 .refs-body ol{padding-left:1.6em;line-height:2}
-.refs-body li{padding:.15em 0;border-bottom:1px solid #d8f3dc;color:#1b3a2d}
+.refs-body li{padding:.15em 0;border-bottom:1px solid #dbeafe;color:#0f1e2e}
 .refs-body li:last-child{border-bottom:none}
-.refs-note{margin-top:2.5em;color:#4a7c6a;font-style:italic;font-size:.85em;border-top:1px solid #d8f3dc;padding-top:1em}
+.refs-note{margin-top:2.5em;color:#4a7c6a;font-style:italic;font-size:.85em;border-top:1px solid #dbeafe;padding-top:1em}
 
 /* ── TABLE SLIDES ── */
 .slide-tbl{width:100%;border-collapse:collapse;font-size:clamp(.64rem,1.25vw,.9rem);margin-top:.3em}
-.slide-tbl th{background:linear-gradient(135deg,#2d6a4f,#1a4d38);color:#fff;padding:9px 14px;text-align:left;font-weight:700;white-space:nowrap;letter-spacing:.02em}
+.slide-tbl th{background:linear-gradient(135deg,#1a3a5c,#1a4d38);color:#fff;padding:9px 14px;text-align:left;font-weight:700;white-space:nowrap;letter-spacing:.02em}
 .slide-tbl th:first-child{border-radius:6px 0 0 0}
 .slide-tbl th:last-child{border-radius:0 6px 0 0}
-.slide-tbl td{padding:7px 14px;border-bottom:1px solid #d8f3dc;vertical-align:top;line-height:1.45;color:#1b3a2d}
-.slide-tbl tr:nth-child(even) td{background:rgba(82,183,136,.07)}
+.slide-tbl td{padding:7px 14px;border-bottom:1px solid #dbeafe;vertical-align:top;line-height:1.45;color:#0f1e2e}
+.slide-tbl tr:nth-child(even) td{background:rgba(13,148,136,.07)}
 .slide-tbl tr:last-child td{border-bottom:none}
-.slide-tbl tr:hover td{background:rgba(82,183,136,.13)}
+.slide-tbl tr:hover td{background:rgba(13,148,136,.13)}
 
 /* ── IMAGE SLIDES ── */
 .img-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2vh 3.5vw;gap:12px;overflow:hidden}
@@ -5399,13 +6810,15 @@ h1{color:#ffffff;font-size:clamp(1.9rem,5.5vw,3.5rem);font-weight:800;line-heigh
 .img-error{color:#c0392b;font-style:italic;font-size:.85rem;text-align:center;padding:2em}
 
 /* ── NAV BAR ── */
-#nav{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:6px;z-index:999;background:rgba(18,38,26,.92);border-radius:50px;padding:8px 14px;backdrop-filter:blur(10px);box-shadow:0 6px 28px rgba(0,0,0,.45);border:1px solid rgba(82,183,136,.2)}
-#nav button{background:none;border:none;color:#d8f3dc;font-size:1.2rem;cursor:pointer;padding:5px 12px;border-radius:24px;transition:background .15s;line-height:1;font-weight:700}
-#nav button:hover:not(:disabled){background:rgba(82,183,136,.2)}
+#nav{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:6px;z-index:999;background:rgba(18,38,26,.92);border-radius:50px;padding:8px 14px;backdrop-filter:blur(10px);box-shadow:0 6px 28px rgba(0,0,0,.45);border:1px solid rgba(13,148,136,.2)}
+#nav button{background:none;border:none;color:#dbeafe;font-size:1.2rem;cursor:pointer;padding:5px 12px;border-radius:24px;transition:background .15s;line-height:1;font-weight:700}
+#nav button:hover:not(:disabled){background:rgba(13,148,136,.2)}
 #nav button:disabled{opacity:.25;cursor:default}
-#ctr{color:#74c69d;font-size:.8rem;font-weight:700;min-width:64px;text-align:center;letter-spacing:.03em}
+#ctr{color:#74c6e4;font-size:.8rem;font-weight:700;min-width:64px;text-align:center;letter-spacing:.03em}
 #exit-nav-btn{background:rgba(192,57,43,.25) !important;color:#ff8a80 !important;font-size:.8rem !important;padding:5px 14px !important;border-radius:24px;font-weight:700 !important;letter-spacing:.03em}
 #exit-nav-btn:hover{background:rgba(192,57,43,.5) !important}
+#img-nav-btn{background:rgba(26,73,113,.35) !important;border:1px solid rgba(82,160,183,.3);color:#a8d8f0 !important;font-size:.78rem !important;padding:5px 14px !important;border-radius:24px;font-weight:700 !important;letter-spacing:.02em}
+#img-nav-btn:hover{background:rgba(82,160,183,.2) !important}
 </style>
 </head>
 <body>
@@ -5414,22 +6827,27 @@ ${slidesHtml}
   <button id="btnP" onclick="go(-1)" title="Previous (&#8592;)">&#8592;</button>
   <div id="ctr">1 / ${totalSlides}</div>
   <button id="btnN" onclick="go(1)" title="Next (&#8594;)">&#8594;</button>
-  <button id="exit-nav-btn" onclick="window.close()">✕ Exit</button>
+  <button id="img-nav-btn" onclick="addImageToSlide()" title="Add image to this slide">&#128247; Add Image</button>
+  <button id="exit-nav-btn" onclick="window.close()">&#10005; Exit</button>
 </div>
+<input type="file" id="img-input" accept="image/*" style="display:none" onchange="handleImgUpload(this)">
+
 <script>
-var cur=0,total=${totalSlides};
+var cur=-1,total=${totalSlides};
 var sls=document.querySelectorAll('.slide');
-function show(n,dir){
+
+// ─── NAVIGATION ───────────────────────────────────────────────────────────────
+function show(n){
   var prev=cur;
   cur=Math.max(0,Math.min(n,total-1));
-  if(prev===cur)return;
-  sls[prev].classList.remove('active');
-  sls[cur].classList.add('active');
+  if(prev===cur && prev>=0)return;
+  if(prev>=0 && sls[prev]) sls[prev].classList.remove('active');
+  if(sls[cur]) sls[cur].classList.add('active');
   document.getElementById('ctr').textContent=(cur+1)+' / '+total;
   document.getElementById('btnP').disabled=cur===0;
   document.getElementById('btnN').disabled=cur===total-1;
 }
-function go(d){show(cur+d,d);}
+function go(d){show(cur+d);}
 document.addEventListener('keydown',function(e){
   if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();go(1);}
   else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();go(-1);}
@@ -5439,31 +6857,53 @@ document.addEventListener('keydown',function(e){
 var tx=0;
 document.addEventListener('touchstart',function(e){tx=e.changedTouches[0].screenX;},{passive:true});
 document.addEventListener('touchend',function(e){var dx=e.changedTouches[0].screenX-tx;if(Math.abs(dx)>50)go(dx<0?1:-1);},{passive:true});
+
+// ─── IMAGE INSERTION ──────────────────────────────────────────────────────────
+function addImageToSlide(){
+  document.getElementById('img-input').click();
+}
+function handleImgUpload(input){
+  if(!input.files||!input.files[0])return;
+  var file=input.files[0];
+  var reader=new FileReader();
+  reader.onload=function(e){
+    var sl=sls[cur];
+    if(!sl)return;
+    var bodyEl=sl.querySelector('.sbody');
+    if(!bodyEl){
+      bodyEl=document.createElement('div');
+      bodyEl.className='sbody';
+      bodyEl.style.flex='1';
+      var progress=sl.querySelector('.progress-bar');
+      sl.insertBefore(bodyEl,progress||null);
+    }
+    var wrap=document.createElement('div');
+    wrap.className='slide-img-insert';
+    wrap.style.cssText='margin:10px 0;text-align:center';
+    var img=document.createElement('img');
+    img.src=e.target.result;
+    img.style.cssText='max-width:100%;max-height:40vh;object-fit:contain;border-radius:8px;display:block;margin:0 auto;box-shadow:0 4px 18px rgba(0,0,0,.22)';
+    var cap=document.createElement('div');
+    cap.style.cssText='font-size:.76rem;color:#4a7c6a;font-style:italic;margin-top:5px';
+    cap.textContent=file.name;
+    wrap.appendChild(img);
+    wrap.appendChild(cap);
+    bodyEl.appendChild(wrap);
+    input.value='';
+    var btn=document.getElementById('img-nav-btn');
+    if(btn){btn.textContent='\u2713 Added!';setTimeout(function(){btn.innerHTML='&#128247; Add Image';},1200);}
+  };
+  reader.readAsDataURL(file);
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+sls.forEach(function(s){s.classList.remove('active');});
 show(0);
 <\/script>
 </body>
 </html>`;
 }
 
-function openSlidePresentation(topicName, subName, sections, uploadedFiles) {
-  try {
-    const slides  = buildPresentationSlides(topicName, subName, sections, uploadedFiles);
-    const htmlStr = buildPresentationHtml(topicName, subName, slides, sections.references || []);
-    const blob    = new Blob([htmlStr], { type: 'text/html' });
-    const url     = URL.createObjectURL(blob);
-    const win     = window.open(url, '_blank');
-    if (!win) {
-      // Popup blocked — show a clickable link
-      const statusEl = document.getElementById('agent-status');
-      if (statusEl) {
-        statusEl.innerHTML = '<span>✅ Slides downloaded — <a href="' + url + '" target="_blank" style="color:var(--accent);font-weight:700">Open Presentation</a> (allow popups for auto-open)</span>';
-      }
-    }
-    setTimeout(() => URL.revokeObjectURL(url), 90000);
-  } catch(e) {
-    console.error('openSlidePresentation error:', e);
-  }
-}
 
 // ─── DOCUMENT SHELF (IndexedDB) ──────────────────────────────────────────────
 let _docsDB = null;
@@ -5746,7 +7186,7 @@ document.addEventListener('paste', function(e) {
       const file = item.getAsFile();
       if (file) {
         // Brief flash so the user sees something happened
-        dropZone.style.outline = '3px solid var(--accent,#2a9d7c)';
+        dropZone.style.outline = '3px solid var(--accent,#0d9488)';
         setTimeout(() => { dropZone.style.outline = ''; }, 600);
         handleCurriculumFile(file);
       }
@@ -5788,7 +7228,7 @@ function renderFifiDashboard() {
 
   if (sessions.length === 0) {
     statsGrid.innerHTML = '';
-    sessionList.innerHTML = '<div class="fifi-no-data"><div class="fifi-nd-icon">📭</div><p>No SAQ sessions completed yet.<br>Complete a session with Alnino to see your performance here.</p></div>';
+    sessionList.innerHTML = '<div class="fifi-no-data"><div class="fifi-nd-icon">📭</div><p>No sessions completed yet.<br>Complete an SAQ or MCQ session with Alnino to see your performance here.</p></div>';
     if (chartsEl) chartsEl.style.display = 'none';
     return;
   }
@@ -5811,8 +7251,11 @@ function renderFifiDashboard() {
     const cls = pct === null ? '' : pct >= 70 ? 'fifi-score-good' : pct >= 40 ? 'fifi-score-mid' : 'fifi-score-low';
     const date = new Date(s.completedAt).toLocaleDateString('en-AU', {day:'numeric', month:'short', year:'numeric'});
     const scoreLabel = pct !== null ? s.totalScore + '/' + s.maxScore + ' (' + pct + '%)' : 'Unscored';
+    const typeTag = s.sessionType === 'mcq'
+      ? '<span style="display:inline-block;background:#ede9ff;color:#5b3fa0;border-radius:50px;font-size:.68rem;font-weight:700;padding:1px 8px;margin-left:6px;vertical-align:middle">MCQ</span>'
+      : '<span style="display:inline-block;background:#fdecea;color:#b5451b;border-radius:50px;font-size:.68rem;font-weight:700;padding:1px 8px;margin-left:6px;vertical-align:middle">SAQ</span>';
     return `<div class="fifi-session-item">
-      <div class="fifi-session-topic">${escHtml((s.topicName||'') + ' › ' + (s.subName||''))}</div>
+      <div class="fifi-session-topic">${escHtml((s.topicName||'') + ' › ' + (s.subName||''))}${typeTag}</div>
       <div class="fifi-session-meta">${date} · ${(s.questions||[]).length} Qs</div>
       <span class="fifi-session-score ${cls}">${scoreLabel}</span>
     </div>`;
@@ -5826,7 +7269,7 @@ function renderFifiDashboard() {
   if (_fifiChartTrend)  { _fifiChartTrend.destroy();  _fifiChartTrend  = null; }
 
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  const textColor  = isDark ? '#6fcfb5' : '#4a7a68';
+  const textColor  = isDark ? '#5eead4' : '#4a6080';
   const gridColor  = isDark ? 'rgba(255,255,255,.07)' : 'rgba(0,0,0,.07)';
 
   // Chart 1: Average score % per subtopic (horizontal bar)
@@ -5842,7 +7285,7 @@ function renderFifiDashboard() {
   });
   const scoreLabels = Object.keys(byTopic).map(k => k.length > 28 ? k.slice(0,26)+'…' : k);
   const scoreValues = Object.values(byTopic).map(v => v.max > 0 ? Math.round(v.total / v.max * 100) : null);
-  const scoreColors = scoreValues.map(v => v === null ? '#aaa' : v >= 70 ? '#2a9d7c' : v >= 40 ? '#e9c46a' : '#e76f51');
+  const scoreColors = scoreValues.map(v => v === null ? '#aaa' : v >= 70 ? '#0d9488' : v >= 40 ? '#e9c46a' : '#e76f51');
 
   const ctxScores = document.getElementById('fifi-chart-scores');
   if (ctxScores) {
@@ -5898,9 +7341,9 @@ function renderFifiDashboard() {
         datasets: [{
           label: 'Score %',
           data: trendValues,
-          borderColor: '#2a9d7c',
-          backgroundColor: 'rgba(42,157,124,.12)',
-          pointBackgroundColor: trendValues.map(v => v >= 70 ? '#2a9d7c' : v >= 40 ? '#e9c46a' : '#e76f51'),
+          borderColor: '#0d9488',
+          backgroundColor: 'rgba(13,148,136,.12)',
+          pointBackgroundColor: trendValues.map(v => v >= 70 ? '#0d9488' : v >= 40 ? '#e9c46a' : '#e76f51'),
           pointRadius: 5,
           pointHoverRadius: 7,
           tension: 0.35,
@@ -6024,6 +7467,8 @@ initSidebar();
 initDarkMode();
 updateBreadcrumb();
 updateSidebarActive('home');
+renderDailyQuote();   // populate quote on first paint
+renderDailyFacts();   // populate facts from Pluto slides (hidden if none yet)
 </script>
 </body>
 </html>
